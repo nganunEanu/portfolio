@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="icomoon.css">
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 15px;
+    }
+    .item {
+      text-align: center;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+    }
+    i {
+      font-size: 28px;
+      display: block;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<h2>All Icomoon Icons</h2>
+<div class="grid" id="icons"></div>
+
+<script>
+fetch('css/icomoon.css')
+  .then(res => res.text())
+  .then(css => {
+    const matches = css.match(/\.icon-[a-zA-Z0-9-]+/g);
+    const unique = [...new Set(matches)];
+
+    const container = document.getElementById('icons');
+
+    unique.forEach(cls => {
+      const name = cls.replace('.', '');
+      const div = document.createElement('div');
+      div.className = 'item';
+      div.innerHTML = `<i class="${name}"></i>${name}`;
+      container.appendChild(div);
+    });
+  });
+</script>
+
+</body>
+</html>
