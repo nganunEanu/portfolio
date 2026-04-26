@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Blog</title>
+  <link rel="stylesheet" href="icomoon/icomoon/style.css">
+  <link rel="stylesheet" href="blog-common.css">
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="header-back-btn"><span class="icon-back"></span></a>
+  <h1>My Blog</h1>
+  <a href="../index.html" class="header-home-btn"><span class="icon-home"></span></a>
+</header>
+
+<!-- Blog Detail -->
+<div class="container blog-detail" id="detail">
+  
+  <!-- Title -->
+  <h2 id="title">Cashless Battery Exchange System with NFC & IoT</h2>
+  <p style="text-align:center; font-size:18px; margin-top:-10px; margin-bottom:20px; color:#666;">
+    Building a Smart Energy Transaction System for My Undergraduate Thesis 🔋
+  </p>
+
+  <img class="main" src="skripsi/skripsi26.png">
+
+  <!-- Intro -->
+  <p style="line-height:1.8; font-size:16px; margin:20px 0; text-align:justify; padding-left:20px;">
+    As energy systems evolve, the need for smarter, faster, and more user-friendly infrastructure becomes increasingly important. This project—developed as my undergraduate final thesis—introduces a battery exchange system that eliminates cash payments by integrating NFC-based digital transactions.
+  </p>
+
+  <p style="line-height:1.8; font-size:16px; margin:20px 0; text-align:justify; padding-left:20px;">
+    The goal is simple: create a seamless, efficient, and scalable solution for battery exchange operations in modern energy ecosystems.
+  </p>
+
+  <!-- Section -->
+  <h3 style="margin-top:30px; padding-left:20px;">⚙️ How the System Works</h3>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    The system manages the full workflow of a battery exchange transaction:
+  </p>
+
+  <ul style="line-height:1.8; font-size:16px; padding-left:60px;">
+    <li>User taps an NFC card</li>
+    <li>System reads user data and balance</li>
+    <li>Data is verified via backend server</li>
+    <li>Battery exchange process is executed</li>
+    <li>Transaction is recorded in real-time</li>
+  </ul>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    At the core of the system is the <strong>ESP32</strong>, which manages communication, control logic, and system coordination.
+  </p>
+
+  <!-- Section -->
+  <h3 style="margin-top:30px; padding-left:20px;">🔌 Key Technologies Used</h3>
+
+  <ul style="line-height:1.8; font-size:16px; padding-left:60px;">
+    <li><strong>NFC Reader</strong> → MFRC522 for reading user cards</li>
+    <li><strong>HMI Display</strong> → Nextion display for user interaction</li>
+    <li><strong>Communication Bus</strong> → MCP2515 (CAN bus) for inter-module communication</li>
+    <li><strong>Backend Server</strong> → PHP-based system for transaction and balance management</li>
+  </ul>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    The system combines WiFi for cloud communication and CAN bus for reliable internal data exchange between modules.
+  </p>
+
+  <!-- Role -->
+  <h3 style="margin-top:30px; padding-left:20px;">🛠️ My Role in the Project</h3>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    I handled both hardware integration and software development, making this a full-stack embedded system project.
+  </p>
+
+  <h4 style="padding-left:30px; margin-top:15px;">💻 ESP32 System Programming</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    I developed the main control logic, including NFC reading, system state handling, and coordination between all modules.
+  </p>
+
+  <h4 style="padding-left:30px; margin-top:15px;">📡 NFC Transaction System</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    Using MFRC522, I implemented card detection, UID reading, and backend validation to enable secure and seamless transactions.
+  </p>
+
+  <h4 style="padding-left:30px; margin-top:15px;">🔗 CAN Bus Communication</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    I configured MCP2515 for reliable real-time communication between subsystems, including message structuring and parsing.
+  </p>
+
+  <h4 style="padding-left:30px; margin-top:15px;">🖥️ HMI Design (Nextion)</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    I designed the user interface to provide clear instructions, smooth navigation, and real-time feedback during transactions.
+  </p>
+
+  <h4 style="padding-left:30px; margin-top:15px;">🌐 Backend Integration</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    I implemented WiFi communication with a PHP backend to validate balances, update transactions, and maintain data consistency.
+  </p>
+
+  <!-- Value -->
+  <h3 style="margin-top:30px; padding-left:20px;">🚀 Why This Project Matters</h3>
+
+  <ul style="line-height:1.8; font-size:16px; padding-left:60px;">
+    <li>✅ Eliminates cash handling in battery exchange systems</li>
+    <li>✅ Enables fast and user-friendly transactions</li>
+    <li>✅ Integrates IoT with energy infrastructure</li>
+    <li>✅ Provides real-time monitoring and data management</li>
+  </ul>
+
+  <!-- Closing -->
+  <h3 style="margin-top:30px; padding-left:20px;">🌟 Final Thoughts</h3>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    As my undergraduate final thesis, this project represents the integration of multiple disciplines—from embedded systems and communication protocols to user interface design and backend development.
+  </p>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    It’s not just about swapping batteries—it’s about building a smart, connected, and user-centric energy solution ready for real-world implementation.
+  </p>
+
+  <!-- Carousel Gallery -->
+  <div class="gallery-wrapper">
+    <button class="gallery-btn prev" id="galleryPrev">&#10094;</button>
+    <div class="gallery">
+      <div class="gallery-track" id="galleryTrack">
+        <div class="gallery-slide"><img src="skripsi/skripsi1.jpg" data-index="0" class="gallery-img" alt="Gallery image 1"></div>
+        <div class="gallery-slide"><img src="skripsi/skripsi2.jpg" data-index="1" class="gallery-img" alt="Gallery image 2"></div>
+        <div class="gallery-slide"><img src="skripsi/skripsi3.jpg" data-index="2" class="gallery-img" alt="Gallery image 3"></div>
+        <div class="gallery-slide"><img src="skripsi/skripsi4.jpg" data-index="3" class="gallery-img" alt="Gallery image 4"></div>
+        <div class="gallery-slide"><img src="skripsi/skripsi5.png" data-index="4" class="gallery-img" alt="Gallery image 5"></div>
+        <div class="gallery-slide"><img src="skripsi/skripsi6.png" data-index="5" class="gallery-img" alt="Gallery image 6"></div>
+        <div class="gallery-slide"><img src="skripsi/skripsi7.png" data-index="0" class="gallery-img" alt="Gallery image 7"></div>
+        <div class="gallery-slide"><img src="skripsi/skripsi8.png" data-index="1" class="gallery-img" alt="Gallery image 8"></div>
+        <div class="gallery-slide"><img src="skripsi/skripsi9.png" data-index="2" class="gallery-img" alt="Gallery image 9"></div>
+        <div class="gallery-slide"><img src="skripsi/skripsi10.png" data-index="3" class="gallery-img" alt="Gallery image 10"></div>
+        <div class="gallery-slide"><img src="skripsi/skripsi11.png" data-index="4" class="gallery-img" alt="Gallery image 11"></div>
+        <div class="gallery-slide"><img src="skripsi/skripsi12.png" data-index="5" class="gallery-img" alt="Gallery image 12"></div>
+        <div class="gallery-slide"><img src="skripsi/skripsi13.jpg" data-index="0" class="gallery-img" alt="Gallery image 13"></div>
+        <div class="gallery-slide"><img src="skripsi/skripsi14.jpg" data-index="1" class="gallery-img" alt="Gallery image 14"></div>
+        <div class="gallery-slide"><img src="skripsi/skripsi15.jpg" data-index="2" class="gallery-img" alt="Gallery image 15"></div>
+        <div class="gallery-slide"><img src="skripsi/skripsi16.jpg" data-index="3" class="gallery-img" alt="Gallery image 16"></div>
+        <div class="gallery-slide"><img src="skripsi/skripsi17.jpg" data-index="4" class="gallery-img" alt="Gallery image 17"></div>
+        <div class="gallery-slide"><img src="skripsi/skripsi18.jpeg" data-index="0" class="gallery-img" alt="Gallery image 1"></div>
+        <div class="gallery-slide"><img src="skripsi/skripsi19.jpeg" data-index="1" class="gallery-img" alt="Gallery image 2"></div>
+        <div class="gallery-slide"><img src="skripsi/skripsi20.jpeg" data-index="2" class="gallery-img" alt="Gallery image 3"></div>
+        <div class="gallery-slide"><img src="skripsi/skripsi21.jpeg" data-index="3" class="gallery-img" alt="Gallery image 4"></div>
+        <div class="gallery-slide"><img src="skripsi/skripsi22.jpeg" data-index="4" class="gallery-img" alt="Gallery image 5"></div>
+        <div class="gallery-slide"><img src="skripsi/skripsi23.jpeg" data-index="5" class="gallery-img" alt="Gallery image 6"></div>
+        <div class="gallery-slide"><img src="skripsi/skripsi24.jpeg" data-index="0" class="gallery-img" alt="Gallery image 7"></div>
+        <div class="gallery-slide"><img src="skripsi/skripsi25.jpeg" data-index="1" class="gallery-img" alt="Gallery image 8"></div>
+      </div>
+    </div>
+    <button class="gallery-btn next" id="galleryNext">&#10095;</button>
+    <div class="gallery-dots" id="galleryDots"></div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <button class="lightbox-prev">&#10094;</button>
+    <button class="lightbox-next">&#10095;</button>
+    <img id="lightbox-img" class="lightbox-img" alt="Gallery preview">
+    <div class="lightbox-counter"><span id="current-img">1</span> / <span id="total-img">6</span></div>
+  </div>
+
+  <!-- Back Button -->
+  <button class="back-btn" onclick="goBack()">Back</button>
+
+</div>
+
+<script src="blog-common.js"></script>
+
+</body>
+</html>

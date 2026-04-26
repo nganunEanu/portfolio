@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Blog</title>
+  <link rel="stylesheet" href="blog-common.css">
+</head>
+<body>
+
+<header>
+  <button class="header-home-btn" data-href="index.html" onclick="goBack()">
+    <span class="icon-home"></span>
+  </button>
+  <h1>My Blog</h1>
+</header>
+
+<!-- Blog Detail -->
+<div class="container blog-detail" id="detail">
+  
+  <!-- Title -->
+  <h2 id="title">Your Blog Title</h2>
+  <p style="text-align:center; font-size:18px; margin-top:-10px; margin-bottom:20px; color:#666;">
+    Your subtitle here
+  </p>
+
+  <img class="main" src="https://picsum.photos/900/400">
+
+  <!-- ==================== YOUR CONTENT GOES HERE ==================== -->
+  <!-- Paste your paragraphs, headings, lists, etc. below this line -->
+
+
+  <!-- ==================== CAROUSEL GALLERY ==================== -->
+  <div class="gallery-wrapper">
+    <button class="gallery-btn prev" id="galleryPrev">&#10094;</button>
+    <div class="gallery">
+      <div class="gallery-track" id="galleryTrack">
+        <div class="gallery-slide"><img src="image1.jpg" data-index="0" class="gallery-img" alt="Gallery image 1"></div>
+        <div class="gallery-slide"><img src="image2.jpg" data-index="1" class="gallery-img" alt="Gallery image 2"></div>
+        <div class="gallery-slide"><img src="image3.jpg" data-index="2" class="gallery-img" alt="Gallery image 3"></div>
+        <!-- Add more slides as needed -->
+      </div>
+    </div>
+    <button class="gallery-btn next" id="galleryNext">&#10095;</button>
+    <div class="gallery-dots" id="galleryDots"></div>
+  </div>
+
+  <!-- ==================== LIGHTBOX MODAL ==================== -->
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <button class="lightbox-prev">&#10094;</button>
+    <button class="lightbox-next">&#10095;</button>
+    <img id="lightbox-img" class="lightbox-img" alt="Gallery preview">
+    <div class="lightbox-counter"><span id="current-img">1</span> / <span id="total-img">3</span></div>
+  </div>
+
+  <!-- ==================== BACK BUTTON ==================== -->
+  <!-- This button is now properly spaced below the gallery -->
+  <button class="back-btn" onclick="goBack()">Back</button>
+
+</div>
+
+<script src="blog-common.js"></script>
+
+</body>
+</html>

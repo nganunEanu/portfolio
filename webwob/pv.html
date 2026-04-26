@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Blog</title>
+  <link rel="stylesheet" href="icomoon/icomoon/style.css">
+  <link rel="stylesheet" href="blog-common.css">
+</head>
+<body>
+<header>
+  <a href="index.html" class="header-back-btn"><span class="icon-back"></span></a>
+  <h1>My Blog</h1>
+  <a href="../index.html" class="header-home-btn"><span class="icon-home"></span></a>
+</header>
+
+<!-- Blog Detail -->
+<div class="container blog-detail" id="detail">
+  
+  <!-- Title -->
+  <h2 id="title">Smarter Solar: Building an IoT-Based Flexible PV System</h2>
+  <p style="text-align:center; font-size:18px; margin-top:-10px; margin-bottom:20px; color:#666;">
+    Mengoptimalkan Energi Surya dengan Tracking dan Monitoring Real-Time ☀️
+  </p>
+
+  <img class="main" src="pv/pv6.jpeg">
+
+  <!-- Intro -->
+  <p style="line-height:1.8; font-size:16px; margin:20px 0; text-align:justify; padding-left:20px;">
+    Energi surya sudah menjadi solusi yang kuat untuk kebutuhan energi berkelanjutan. Namun, bagaimana jika kita bisa membuatnya lebih cerdas? Proyek ini mengeksplorasi sistem photovoltaic (PV) dengan sumbu fleksibel yang dikombinasikan dengan monitoring berbasis IoT secara real-time.
+  </p>
+
+  <p style="line-height:1.8; font-size:16px; margin:20px 0; text-align:justify; padding-left:20px;">
+    Tujuannya sederhana: memaksimalkan penyerapan energi sekaligus memberikan visibilitas penuh terhadap performa sistem dari mana saja.
+  </p>
+
+  <!-- Section -->
+  <h3 style="margin-top:30px; padding-left:20px;">🔄 Mengikuti Matahari untuk Efisiensi Maksimal</h3>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    Berbeda dengan panel surya statis, sistem ini dirancang untuk menyesuaikan orientasi panel secara dinamis mengikuti pergerakan matahari sepanjang hari. Dengan sudut yang selalu optimal, energi yang ditangkap dapat meningkat secara signifikan.
+  </p>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    Selain itu, sistem juga dilengkapi dengan monitoring IoT yang memungkinkan pengguna melihat performa secara real-time, termasuk:
+  </p>
+
+  <ul style="line-height:1.8; font-size:16px; padding-left:60px;">
+    <li>Voltage</li>
+    <li>Current</li>
+    <li>Power</li>
+  </ul>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    Data ini dikirim secara wireless dan dapat diakses dari jarak jauh, membuat sistem lebih transparan dan mudah dalam pemeliharaan.
+  </p>
+
+  <!-- Section -->
+  <h3 style="margin-top:30px; padding-left:20px;">📡 IoT dan Monitoring Energi</h3>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    Sistem monitoring dibangun menggunakan <strong>ESP8266</strong> sebagai pusat pemrosesan dan komunikasi data.
+  </p>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    Untuk mendapatkan data yang akurat:
+  </p>
+
+  <ul style="line-height:1.8; font-size:16px; padding-left:60px;">
+    <li>Arus diukur menggunakan <strong>ACS712</strong></li>
+    <li>Tegangan diukur menggunakan <strong>voltage divider</strong></li>
+    <li>Data dikonversi menggunakan <strong>ADS1115 (16-bit ADC)</strong></li>
+  </ul>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    ADC berkomunikasi dengan ESP8266 melalui protokol <strong>I²C</strong>, memungkinkan pembacaan data multi-channel dengan presisi tinggi.
+  </p>
+
+  <!-- Role -->
+  <h3 style="margin-top:30px; padding-left:20px;">🛠️ Peran Saya dalam Proyek</h3>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    Fokus utama saya adalah pada desain sistem pengukuran untuk memastikan data yang diperoleh akurat, stabil, dan dapat diandalkan.
+  </p>
+
+  <h4 style="padding-left:30px; margin-top:15px;">🔌 Electrical & Wiring Design</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    Saya merancang sistem pengukuran arus menggunakan ACS712 serta pengukuran tegangan menggunakan voltage divider yang telah dikalibrasi, dengan perhatian khusus pada integritas sinyal dan noise.
+  </p>
+
+  <h4 style="padding-left:30px; margin-top:15px;">📊 Integrasi Sensor dengan ADC</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    Saya mengintegrasikan sensor dengan ADS1115 untuk mendapatkan resolusi tinggi dan akurasi yang lebih baik, memanfaatkan fitur multi-channel dan komunikasi I²C.
+  </p>
+
+  <h4 style="padding-left:30px; margin-top:15px;">📡 Komunikasi Microcontroller</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    Saya mengimplementasikan komunikasi antara ADC dan ESP8266, termasuk alur pembacaan data dan persiapan data untuk transmisi IoT secara real-time.
+  </p>
+
+  <!-- Value -->
+  <h3 style="margin-top:30px; padding-left:20px;">🚀 Kenapa Proyek Ini Penting?</h3>
+
+  <ul style="line-height:1.8; font-size:16px; padding-left:60px;">
+    <li>✅ Efisiensi energi meningkat dengan solar tracking</li>
+    <li>✅ Monitoring performa secara real-time</li>
+    <li>✅ Akses data dari jarak jauh melalui IoT</li>
+    <li>✅ Memudahkan diagnosis dan maintenance</li>
+  </ul>
+
+  <!-- Closing -->
+  <h3 style="margin-top:30px; padding-left:20px;">🌱 Penutup</h3>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    Proyek ini menunjukkan bagaimana kombinasi antara hardware dan IoT dapat meningkatkan sistem energi konvensional. Ini bukan hanya tentang menghasilkan energi, tetapi juga tentang memahami dan mengelolanya secara cerdas.
+  </p>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    Dengan pendekatan seperti ini, energi surya menjadi lebih adaptif, efisien, dan siap untuk kebutuhan masa depan.
+  </p>
+
+
+  <!-- Carousel Gallery -->
+  <div class="gallery-wrapper">
+    <button class="gallery-btn prev" id="galleryPrev">&#10094;</button>
+    <div class="gallery">
+      <div class="gallery-track" id="galleryTrack">
+        <div class="gallery-slide"><img src="pv/pv1.png" data-index="0" class="gallery-img" alt="Gallery image 1"></div>
+        <div class="gallery-slide"><img src="pv/pv2.jpg" data-index="1" class="gallery-img" alt="Gallery image 2"></div>
+        <div class="gallery-slide"><img src="pv/pv3.jpg" data-index="2" class="gallery-img" alt="Gallery image 3"></div>
+        <div class="gallery-slide"><img src="pv/pv4.jpeg" data-index="3" class="gallery-img" alt="Gallery image 4"></div>
+        <div class="gallery-slide"><img src="pv/pv5.jpeg" data-index="4" class="gallery-img" alt="Gallery image 5"></div>
+        <div class="gallery-slide"><img src="pv/pv6.jpeg" data-index="5" class="gallery-img" alt="Gallery image 6"></div>
+        <div class="gallery-slide"><img src="pv/pv7.jpeg" data-index="6" class="gallery-img" alt="Gallery image 7"></div>
+        <div class="gallery-slide"><img src="pv/pv8.jpeg" data-index="7" class="gallery-img" alt="Gallery image 8"></div>
+        <div class="gallery-slide"><img src="pv/pv9.jpeg" data-index="8" class="gallery-img" alt="Gallery image 9"></div>
+        <div class="gallery-slide"><img src="pv/pv10.jpeg" data-index="9" class="gallery-img" alt="Gallery image 10"></div>
+        <div class="gallery-slide"><img src="pv/pv11.jpeg" data-index="10" class="gallery-img" alt="Gallery image 11"></div>
+        <div class="gallery-slide"><img src="pv/pv12.jpeg" data-index="11" class="gallery-img" alt="Gallery image 12"></div>
+        
+      </div>
+    </div>
+    <button class="gallery-btn next" id="galleryNext">&#10095;</button>
+    <div class="gallery-dots" id="galleryDots"></div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <button class="lightbox-prev">&#10094;</button>
+    <button class="lightbox-next">&#10095;</button>
+    <img id="lightbox-img" class="lightbox-img" alt="Gallery preview">
+    <div class="lightbox-counter"><span id="current-img">1</span> / <span id="total-img">6</span></div>
+  </div>
+
+  <!-- Back Button -->
+  <button class="back-btn" onclick="goBack()">Back</button>
+
+</div>
+
+<script src="blog-common.js"></script>
+
+</body>
+</html>

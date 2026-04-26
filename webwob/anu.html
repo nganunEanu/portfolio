@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiper.js Gallery</title>
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+        }
+        
+        /* Wrap the entire gallery in a div */
+        .gallery-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 1000px; /* Wider than the swiper-container */
+            margin: 50px auto;
+        }
+        
+        /* Swiper container styling */
+        .swiper-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            padding: 0 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 450px;
+        }
+        
+        .swiper-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .swiper-slide {
+            width: 250px;
+            height: 280px;
+            opacity: 0.5;
+            filter: brightness(0.7);
+            border-radius: 15px;
+            transition: all 1s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            overflow: hidden;
+            margin: 0 15px;
+            position: relative;
+        }
+        
+        .swiper-slide-active {
+            width: 400px !important;
+            height: 430px !important;
+            opacity: 1;
+            filter: brightness(1);
+        }
+        
+        .fh5co-blog {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .blog-bg {
+            display: block;
+            width: 100%;
+            height: 85%;
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px 15px 0 0;
+        }
+        
+        .blog-text {
+            width: 100%;
+            height: 15%;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px;
+            border-radius: 0 0 15px 15px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .blog-text h3 {
+            margin: 0;
+            font-size: 16px;
+        }
+        
+        .blog-text a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        /* Navigation Buttons */
+        .swiper-button-next,
+        .swiper-button-prev {
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+        }
+        
+        .swiper-button-next {
+            right: -70px; /* Move it more to the right */
+        }
+        
+        .swiper-button-prev {
+            left: -70px; /* Move it more to the left */
+        }
+        
+        .swiper-button-next::after,
+        .swiper-button-prev::after {
+            font-size: 18px;
+            color: black;
+        }
+        
+
+        
+    </style>
+</head>
+<body>
+
+<!-- Swiper Container -->
+    <div class="gallery-wrapper">
+        <div class="swiper-button-prev"></div> <!-- Move buttons outside -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="fh5co-blog">
+                        <a href="#" class="blog-bg" data-bg="user-3.jpg"></a>
+                        <div class="blog-text">
+                            <h3><a href="#">Photoshoot On The Street</a></h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="fh5co-blog">
+                        <a href="#" class="blog-bg" data-bg="user-3.jpg"></a>
+                        <div class="blog-text">
+                            <h3><a href="#">Surfing at Philippines</a></h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="fh5co-blog">
+                        <a href="#" class="blog-bg" data-bg="user-3.jpg"></a>
+                        <div class="blog-text">
+                            <h3><a href="#">Capture Living On Underwater</a></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div> <!-- Move buttons outside -->
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        const swiper = new Swiper(".swiper-container", {
+            slidesPerView: 3,
+            centeredSlides: true,
+            loop: true,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            on: {
+                init: function () {
+                    let count = 0;
+                    const interval = setInterval(() => {
+                        if (count < 100) {
+                            this.slidePrev();
+                            count++;
+                        } else {
+                            clearInterval(interval); // Stop after 100 times
+                        }
+                    }, 10); // Delay between slides (10ms)
+                },
+                slideChangeTransitionEnd: function () {
+                    document.querySelectorAll(".swiper-slide").forEach(slide => {
+                        slide.style.width = "250px";
+                        slide.style.height = "280px";
+                    });
+        
+                    const activeSlide = document.querySelector(".swiper-slide-active");
+                    activeSlide.style.width = "400px";
+                    activeSlide.style.height = "430px";
+                }
+            }
+        });
+        
+
+        document.querySelectorAll('.swiper-slide').forEach(slide => {
+            slide.addEventListener('click', function (e) {
+                if (!this.classList.contains('swiper-slide-active')) {
+                    e.preventDefault();
+                }
+            });
+        });
+
+        // Apply background images using dataset attribute
+        document.querySelectorAll(".blog-bg").forEach(bg => {
+            bg.style.backgroundImage = `url(${bg.dataset.bg})`;
+        });
+    </script>
+
+</body>
+</html>

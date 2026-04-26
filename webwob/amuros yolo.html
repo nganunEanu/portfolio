@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Blog</title>
+  <link rel="stylesheet" href="icomoon/icomoon/style.css">
+  <link rel="stylesheet" href="blog-common.css">
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="header-back-btn"><span class="icon-back"></span></a>
+  <h1>My Blog</h1>
+  <a href="../index.html" class="header-home-btn"><span class="icon-home"></span></a>
+</header>
+
+<!-- Blog Detail -->
+<div class="container blog-detail" id="detail">
+  
+  <!-- Title -->
+  <h2 id="title">Teaching a Soccer Robot to See: YOLO on Amuros KRSBi-B</h2>
+  <p style="text-align:center; font-size:18px; margin-top:-10px; margin-bottom:20px; color:#666;">
+    Real-Time Vision for Autonomous Robot Soccer ⚽🤖
+  </p>
+
+  <img class="main" src="amuros/amuros12.jpg">
+
+  <!-- Intro -->
+  <p style="line-height:1.8; font-size:16px; margin:20px 0; text-align:justify; padding-left:20px;">
+    In robot soccer, vision is everything. A robot must detect the ball, locate the goal, avoid opponents, and understand the field—all in real time. This project brings that capability to life by implementing a <strong>deep learning–based object detection system</strong> using YOLO on the Amuros KRSBi-B robot.
+  </p>
+
+  <!-- Section -->
+  <h3 style="margin-top:30px; padding-left:20px;">👁️ Real-Time Vision on the Field</h3>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    The system uses <strong>YOLO (You Only Look Once)</strong> to detect key elements in a single pass, enabling fast and efficient processing:
+  </p>
+
+  <ul style="line-height:1.8; font-size:16px; padding-left:60px;">
+    <li>⚽ Ball</li>
+    <li>🥅 Goalpost</li>
+    <li>🤖 Opponent robots</li>
+    <li>📏 Field boundaries</li>
+  </ul>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    This makes YOLO ideal for dynamic environments where speed and accuracy are critical.
+  </p>
+
+  <!-- Section -->
+  <h3 style="margin-top:30px; padding-left:20px;">🧠 From Dataset to Intelligent Detection</h3>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    The model was developed using the <strong>Ultralytics YOLO framework</strong> and trained on a custom dataset:
+  </p>
+
+  <ul style="line-height:1.8; font-size:16px; padding-left:60px;">
+    <li>Images captured under various lighting conditions</li>
+    <li>Different distances and camera angles</li>
+    <li>Real match-like scenarios</li>
+  </ul>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    This ensures robust detection performance during actual gameplay.
+  </p>
+
+  <!-- Section -->
+  <h3 style="margin-top:30px; padding-left:20px;">🖥️ Edge AI Deployment</h3>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    The model is deployed on the <strong>NVIDIA Jetson Nano</strong>, enabling:
+  </p>
+
+  <ul style="line-height:1.8; font-size:16px; padding-left:60px;">
+    <li>Real-time inference without cloud dependency</li>
+    <li>Low latency for fast decision-making</li>
+    <li>Compact integration within the robot</li>
+  </ul>
+
+  <!-- Section -->
+  <h3 style="margin-top:30px; padding-left:20px;">🔗 Integration with Robot Control</h3>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    Detection results are processed into actionable data:
+  </p>
+
+  <ul style="line-height:1.8; font-size:16px; padding-left:60px;">
+    <li>Object coordinates (position)</li>
+    <li>Movement direction</li>
+    <li>Detection confidence</li>
+  </ul>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    These outputs are integrated into the robot’s control system, enabling:
+  </p>
+
+  <ul style="line-height:1.8; font-size:16px; padding-left:60px;">
+    <li>Ball tracking</li>
+    <li>Navigation toward the goal</li>
+    <li>Obstacle avoidance</li>
+  </ul>
+
+  <!-- Role -->
+  <h3 style="margin-top:30px; padding-left:20px;">🛠️ My Role in the Project</h3>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    I was responsible for developing the full computer vision pipeline—from dataset creation to deployment and integration.
+  </p>
+
+  <h4 style="padding-left:30px; margin-top:15px;">📊 Dataset Preparation & Annotation</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    Collected images, labeled objects, and prepared the dataset for training.
+  </p>
+
+  <h4 style="padding-left:30px; margin-top:15px;">🤖 Model Training & Optimization</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    Trained and optimized the YOLO model for accuracy and real-time performance.
+  </p>
+
+  <h4 style="padding-left:30px; margin-top:15px;">🖥️ Deployment on Jetson Nano</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    Configured environment, installed dependencies, and deployed the trained model for edge inference.
+  </p>
+
+  <h4 style="padding-left:30px; margin-top:15px;">💻 Python Vision Pipeline</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    Developed scripts to process camera input, extract object data, and communicate with the control system.
+  </p>
+
+  <h4 style="padding-left:30px; margin-top:15px;">🔄 System Integration</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    Integrated perception with robot navigation, enabling real-time decision-making.
+  </p>
+
+  <!-- Value -->
+  <h3 style="margin-top:30px; padding-left:20px;">🚀 Why This Project Matters</h3>
+
+  <ul style="line-height:1.8; font-size:16px; padding-left:60px;">
+    <li>✅ Enables autonomous robot soccer gameplay</li>
+    <li>✅ Provides real-time environmental awareness</li>
+    <li>✅ Demonstrates AI deployment on embedded systems</li>
+    <li>✅ Bridges deep learning with robotics control</li>
+  </ul>
+
+  <!-- Closing -->
+  <h3 style="margin-top:30px; padding-left:20px;">🌟 Final Thoughts</h3>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    This project transforms the robot from a simple machine into a perceptive, responsive player. By combining deep learning, embedded systems, and robotics, the system enables the robot to understand and react to its environment in real time.
+  </p>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    In competitions like KRSBi, speed and accuracy are critical—and with YOLO-based vision, the robot is no longer just moving—it’s understanding the game.
+  </p>
+
+  <!-- Carousel Gallery -->
+  <div class="gallery-wrapper">
+    <button class="gallery-btn prev" id="galleryPrev">&#10094;</button>
+    <div class="gallery">
+      <div class="gallery-track" id="galleryTrack">
+        <div class="gallery-slide"><img src="amuros/amuros11.jpg" data-index="0" class="gallery-img" alt="Gallery image 1"></div>
+        <div class="gallery-slide"><img src="amuros/amuros12.jpg" data-index="1" class="gallery-img" alt="Gallery image 2"></div>
+        <div class="gallery-slide"><img src="amuros/amuros13.jpg" data-index="2" class="gallery-img" alt="Gallery image 3"></div>
+      </div>
+    </div>
+    <button class="gallery-btn next" id="galleryNext">&#10095;</button>
+    <div class="gallery-dots" id="galleryDots"></div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <button class="lightbox-prev">&#10094;</button>
+    <button class="lightbox-next">&#10095;</button>
+    <img id="lightbox-img" class="lightbox-img" alt="Gallery preview">
+    <div class="lightbox-counter"><span id="current-img">1</span> / <span id="total-img">6</span></div>
+  </div>
+
+  <!-- Back Button -->
+  <button class="back-btn" onclick="goBack()">Back</button>
+
+</div>
+
+<script src="blog-common.js"></script>
+
+</body>
+</html>

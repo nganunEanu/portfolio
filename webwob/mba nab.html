@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Blog</title>
+  <link rel="stylesheet" href="icomoon/icomoon/style.css">
+  <link rel="stylesheet" href="blog-common.css">
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="header-back-btn"><span class="icon-back"></span></a>
+  <h1>My Blog</h1>
+  <a href="../index.html" class="header-home-btn"><span class="icon-home"></span></a>
+</header>
+
+<!-- Blog Detail -->
+<div class="container blog-detail" id="detail">
+  
+  <!-- Title -->
+  <h2 id="title">Tomatoes Smart Monitoring</h2>
+  <p style="text-align:center; font-size:18px; margin-top:-10px; margin-bottom:20px; color:#666;">
+    Building an Automated Plant Care System
+  </p>
+
+  <img class="main" src="tomat/tomat5.jpeg">
+
+  <!-- Intro -->
+  <p style="line-height:1.8; font-size:16px; margin:20px 0; text-align:justify; padding-left:20px;">
+    Maintaining healthy tomato plants requires consistent attention—especially when it comes to watering and pest control. To address this challenge, I developed <strong>Tomatoes Smart Monitoring</strong>, an automated microcontroller-based system designed to improve efficiency, reduce manual effort, and ensure optimal plant conditions.
+  </p>
+
+  <!-- Project Overview -->
+  <h3 style="margin-top:30px; padding-left:20px;">Project Overview</h3>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    Tomatoes Smart Monitoring is built to handle two critical aspects of plant care: <strong>irrigation</strong> and <strong>protection</strong>. The system continuously monitors soil moisture levels in real time and automatically activates irrigation when the soil becomes too dry. This ensures that plants receive the right amount of water without relying on manual intervention.
+  </p>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    Beyond irrigation, the system also integrates an <strong>automatic pesticide spraying mechanism</strong>. This feature helps protect tomato plants from pests and diseases, making the system not only reactive but also preventive in maintaining plant health.
+  </p>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    To enhance reliability, <strong>liquid level sensors</strong> are incorporated into both the water and pesticide reservoirs. These sensors detect when the liquid levels are low or empty, preventing pump dry-run conditions and ensuring timely refilling—an important safeguard for both the hardware and the plants.
+  </p>
+
+  <!-- My Contributions -->
+  <h3 style="margin-top:30px; padding-left:20px;">My Contributions</h3>
+
+  <h4 style="padding-left:30px; margin-top:15px;">Electronics Design</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    I designed the complete electronic system, including schematic development and PCB layout. The design integrates the microcontroller, soil moisture sensor, liquid level sensors, pump driver circuits, and power regulation to ensure stable, efficient, and reliable operation under real-world conditions.
+  </p>
+
+  <h4 style="padding-left:30px; margin-top:15px;">Component Selection</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    Careful component selection was essential for durability and performance. I selected sensors, voltage regulators, connectors, and driver components based on electrical requirements and suitability for field use, ensuring the system remains robust over time.
+  </p>
+
+  <h4 style="padding-left:30px; margin-top:15px;">PCB Assembly</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    I carried out the PCB assembly process, including soldering components, establishing wiring connections, and verifying circuit continuity. This ensured that the physical hardware accurately reflected the design and functioned as intended.
+  </p>
+
+  <h4 style="padding-left:30px; margin-top:15px;">Hardware Testing and Troubleshooting</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    Extensive testing was performed to validate system functionality, including sensor accuracy, automatic pump control, and protection mechanisms. I also handled debugging and troubleshooting to improve overall system reliability.
+  </p>
+
+  <h4 style="padding-left:30px; margin-top:15px;">Casing and Enclosure Design</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    To protect the electronics, I designed a dedicated enclosure that shields components from dust, moisture, and mechanical impact. The design also ensures proper layout, cable management, and ease of installation for real-world deployment.
+  </p>
+
+  <!-- Conclusion -->
+  <h3 style="margin-top:30px; padding-left:20px;">Conclusion</h3>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    Tomatoes Smart Monitoring demonstrates how automation and embedded systems can significantly improve agricultural practices. By combining real-time sensing, automated control, and protective mechanisms, the system reduces manual workload while increasing consistency and reliability in plant care.
+  </p>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    This project reflects a practical application of electronics design, embedded systems, and hardware integration to solve everyday problems in agriculture—making plant maintenance smarter, safer, and more efficient.
+  </p>
+
+  <!-- Carousel Gallery -->
+  <div class="gallery-wrapper">
+    <button class="gallery-btn prev" id="galleryPrev">&#10094;</button>
+    <div class="gallery">
+      <div class="gallery-track" id="galleryTrack">
+        <div class="gallery-slide"><img src="tomat/tomat1.jpeg" data-index="0" class="gallery-img" alt="Gallery image 1"></div>
+        <div class="gallery-slide"><img src="tomat/tomat2.jpeg" data-index="1" class="gallery-img" alt="Gallery image 2"></div>
+        <div class="gallery-slide"><img src="tomat/tomat3.jpeg" data-index="2" class="gallery-img" alt="Gallery image 3"></div>
+        <div class="gallery-slide"><img src="tomat/tomat4.jpeg" data-index="3" class="gallery-img" alt="Gallery image 4"></div>
+        <div class="gallery-slide"><img src="tomat/tomat5.jpeg" data-index="4" class="gallery-img" alt="Gallery image 5"></div>
+        <div class="gallery-slide"><img src="tomat/tomat6.jpeg" data-index="5" class="gallery-img" alt="Gallery image 6"></div>
+      </div>
+    </div>
+    <button class="gallery-btn next" id="galleryNext">&#10095;</button>
+    <div class="gallery-dots" id="galleryDots"></div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <button class="lightbox-prev">&#10094;</button>
+    <button class="lightbox-next">&#10095;</button>
+    <img id="lightbox-img" class="lightbox-img" alt="Gallery preview">
+    <div class="lightbox-counter"><span id="current-img">1</span> / <span id="total-img">6</span></div>
+  </div>
+
+  <!-- Back Button -->
+  <button class="back-btn" onclick="goBack()">Back</button>
+
+</div>
+
+<script src="blog-common.js"></script>
+
+</body>
+</html>

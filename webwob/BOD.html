@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Blog</title>
+  <link rel="stylesheet" href="icomoon/icomoon/style.css">
+  <link rel="stylesheet" href="blog-common.css">
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="header-back-btn"><span class="icon-back"></span></a>
+  <h1>My Blog</h1>
+  <a href="../index.html" class="header-home-btn"><span class="icon-home"></span></a>
+</header>
+
+<!-- Blog Detail -->
+<div class="container blog-detail" id="detail">
+  
+  <!-- Title -->
+  <h2 id="title">Predicting Water Quality with AI: BOD Estimation System</h2>
+  <p style="text-align:center; font-size:18px; margin-top:-10px; margin-bottom:20px; color:#666;">
+    Turning Environmental Data into Instant Insight with Machine Learning 💧
+  </p>
+
+  <img class="main" src="BOD/bod1.png">
+
+  <!-- Intro -->
+  <p style="line-height:1.8; font-size:16px; margin:20px 0; text-align:justify; padding-left:20px;">
+    Monitoring water quality is essential for environmental safety and decision-making. However, traditional laboratory testing—especially for <strong>Biochemical Oxygen Demand (BOD)</strong>—can take several days to produce results.
+  </p>
+
+  <p style="line-height:1.8; font-size:16px; margin:20px 0; text-align:justify; padding-left:20px;">
+    This project addresses that limitation by developing an <strong>AI-based prediction system</strong> that estimates BOD instantly using measurable parameters such as pH, TDS, and COD.
+  </p>
+
+  <!-- Section -->
+  <h3 style="margin-top:30px; padding-left:20px;">🧠 From Data to Real-Time Prediction</h3>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    The system uses a neural network built with <strong>Keras</strong> to learn patterns from historical water quality data. Instead of waiting for lab analysis, users can input:
+  </p>
+
+  <ul style="line-height:1.8; font-size:16px; padding-left:60px;">
+    <li><strong>pH</strong> → acidity/alkalinity level</li>
+    <li><strong>TDS</strong> → total dissolved solids</li>
+    <li><strong>COD</strong> → chemical oxygen demand</li>
+  </ul>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    The system then predicts the <strong>BOD value in real time</strong>, transforming a slow laboratory process into a fast, data-driven estimation tool.
+  </p>
+
+  <!-- Section -->
+  <h3 style="margin-top:30px; padding-left:20px;">🖥️ User-Friendly Desktop Application</h3>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    To ensure accessibility, a graphical interface was developed using <strong>Tkinter</strong>. The application allows users to:
+  </p>
+
+  <ul style="line-height:1.8; font-size:16px; padding-left:60px;">
+    <li>Input water quality parameters easily</li>
+    <li>Run predictions with a single action</li>
+    <li>View results instantly</li>
+  </ul>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    This makes the system usable not only by engineers, but also by non-technical users in the field.
+  </p>
+
+  <!-- Role -->
+  <h3 style="margin-top:30px; padding-left:20px;">🛠️ My Role in the Project</h3>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    I handled the complete pipeline—from data preparation to deployment—ensuring the system is both accurate and user-friendly.
+  </p>
+
+  <h4 style="padding-left:30px; margin-top:15px;">📊 Dataset Preparation & Preprocessing</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    Organized and cleaned the dataset (pH, TDS, COD, BOD), performed normalization, and prepared it for training and validation.
+  </p>
+
+  <h4 style="padding-left:30px; margin-top:15px;">🤖 Model Development (Keras)</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    Designed and trained a neural network for regression, optimizing parameters to achieve accurate BOD predictions.
+  </p>
+
+  <h4 style="padding-left:30px; margin-top:15px;">📈 Model Evaluation & Optimization</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    Evaluated performance using error metrics and refined the model architecture to improve reliability across datasets.
+  </p>
+
+  <h4 style="padding-left:30px; margin-top:15px;">💾 Model Deployment</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    Saved and prepared the trained model for integration into a real-time application.
+  </p>
+
+  <h4 style="padding-left:30px; margin-top:15px;">🖥️ GUI Development</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    Built a clean Tkinter interface with input validation and clear result display for improved usability.
+  </p>
+
+  <h4 style="padding-left:30px; margin-top:15px;">🔗 System Integration</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    Integrated the trained model with the GUI to enable real-time predictions from user input.
+  </p>
+
+  <h4 style="padding-left:30px; margin-top:15px;">🧪 Testing & Validation</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    Verified prediction consistency, tested interface usability, and ensured system reliability.
+  </p>
+
+  <!-- Value -->
+  <h3 style="margin-top:30px; padding-left:20px;">🚀 Why This Project Matters</h3>
+
+  <ul style="line-height:1.8; font-size:16px; padding-left:60px;">
+    <li>✅ Reduces dependency on time-consuming laboratory tests</li>
+    <li>✅ Enables faster decision-making in water quality management</li>
+    <li>✅ Demonstrates practical AI application in environmental engineering</li>
+    <li>✅ Bridges data science with real-world usability</li>
+  </ul>
+
+  <!-- Closing -->
+  <h3 style="margin-top:30px; padding-left:20px;">🌟 Final Thoughts</h3>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    This project shows how machine learning can transform complex environmental analysis into a fast and accessible tool. By combining predictive modeling with a simple interface, water quality assessment becomes more efficient and user-friendly.
+  </p>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    Ultimately, it’s not just about predicting values—it’s about enabling faster, smarter decisions for environmental monitoring.
+  </p>
+
+  <!-- Carousel Gallery -->
+  <div class="gallery-wrapper">
+    <button class="gallery-btn prev" id="galleryPrev">&#10094;</button>
+    <div class="gallery">
+      <div class="gallery-track" id="galleryTrack">
+        <div class="gallery-slide"><img src="BOD/bod1.png" data-index="0" class="gallery-img" alt="Gallery image 1"></div>
+        <div class="gallery-slide"><img src="BOD/bod2.png" data-index="1" class="gallery-img" alt="Gallery image 2"></div>
+        <div class="gallery-slide"><img src="BOD/bod3.png" data-index="2" class="gallery-img" alt="Gallery image 3"></div>
+      </div>
+    </div>
+    <button class="gallery-btn next" id="galleryNext">&#10095;</button>
+    <div class="gallery-dots" id="galleryDots"></div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <button class="lightbox-prev">&#10094;</button>
+    <button class="lightbox-next">&#10095;</button>
+    <img id="lightbox-img" class="lightbox-img" alt="Gallery preview">
+    <div class="lightbox-counter"><span id="current-img">1</span> / <span id="total-img">6</span></div>
+  </div>
+
+  <!-- Back Button -->
+  <button class="back-btn" onclick="goBack()">Back</button>
+
+</div>
+
+<script src="blog-common.js"></script>
+
+</body>
+</html>

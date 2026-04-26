@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Blog</title>
+  <link rel="stylesheet" href="icomoon/icomoon/style.css">
+  <link rel="stylesheet" href="blog-common.css">
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="header-back-btn"><span class="icon-back"></span></a>
+  <h1>My Blog</h1>
+  <a href="../index.html" class="header-home-btn"><span class="icon-home"></span></a>
+</header>
+
+<!-- Blog Detail -->
+<div class="container blog-detail" id="detail">
+  
+  <!-- Title -->
+  <h2 id="title">Smart E-Bike Assist Kit with ESP32</h2>
+  <p style="text-align:center; font-size:18px; margin-top:-10px; margin-bottom:20px; color:#666;">
+    Intelligent Pedal Assistance for a Smoother Ride 🚴‍♂️
+  </p>
+
+  <img class="main" src="nina/nina5.png">
+
+  <!-- Intro -->
+  <p style="line-height:1.8; font-size:16px; margin:20px 0; text-align:justify; padding-left:20px;">
+    Starting a bicycle from a standstill—especially uphill—can be the most physically demanding part of riding. This project addresses that challenge by developing an <strong>ESP32-based E-Bike assist kit</strong> that provides automatic motor assistance during the initial pedaling phase.
+  </p>
+
+  <p style="line-height:1.8; font-size:16px; margin:20px 0; text-align:justify; padding-left:20px;">
+    The system intelligently detects rider input and delivers a smooth boost, making cycling more comfortable and accessible.
+  </p>
+
+  <!-- Section -->
+  <h3 style="margin-top:30px; padding-left:20px;">⚙️ How the System Works</h3>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    The system continuously monitors pedaling speed using a rotary encoder and responds dynamically:
+  </p>
+
+  <ul style="line-height:1.8; font-size:16px; padding-left:60px;">
+    <li><strong>RPM &lt; 5</strong> → Motor activates to provide initial assist</li>
+    <li><strong>RPM ≥ 40</strong> → Motor stops as normal pedaling is achieved</li>
+  </ul>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    This creates a seamless transition between assisted and manual riding, ensuring efficiency and natural control.
+  </p>
+
+  <!-- Section -->
+  <h3 style="margin-top:30px; padding-left:20px;">🔌 Key Components</h3>
+
+  <ul style="line-height:1.8; font-size:16px; padding-left:60px;">
+    <li><strong>Microcontroller</strong> → ESP32 for system control</li>
+    <li><strong>Motor Driver</strong> → BTS7960 for high-current motor control</li>
+    <li><strong>Motor</strong> → PG45 geared DC motor for torque</li>
+    <li><strong>Power Module</strong> → XL7015 step-down regulator</li>
+    <li><strong>Display</strong> → OLED for RPM and battery status</li>
+    <li><strong>Sensor</strong> → Rotary encoder for speed measurement</li>
+  </ul>
+
+  <!-- Section -->
+  <h3 style="margin-top:30px; padding-left:20px;">🧠 Intelligent Control with PID</h3>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    To ensure smooth and responsive assistance, the motor is controlled using a <strong>PID (Proportional–Integral–Derivative)</strong> algorithm.
+  </p>
+
+  <ul style="line-height:1.8; font-size:16px; padding-left:60px;">
+    <li>Gradual motor acceleration (no sudden jerks)</li>
+    <li>Stable and controlled output</li>
+    <li>Dynamic response to changing RPM</li>
+  </ul>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    This ensures a natural riding experience that feels intuitive rather than mechanical.
+  </p>
+
+  <!-- Role -->
+  <h3 style="margin-top:30px; padding-left:20px;">🛠️ My Role in the Project</h3>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    I was responsible for both mechanical design and embedded system development, making this a fully integrated engineering project.
+  </p>
+
+  <h4 style="padding-left:30px; margin-top:15px;">📐 Mechanical Design (CAD)</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    Using SolidWorks, I designed motor mounts, enclosures, and structural supports optimized for strength, alignment, and ease of installation.
+  </p>
+
+  <h4 style="padding-left:30px; margin-top:15px;">🏭 Fabrication & Assembly</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    I manufactured parts using 3D printing, assembled all components, and installed the system onto a bicycle.
+  </p>
+
+  <h4 style="padding-left:30px; margin-top:15px;">💻 Embedded System Development</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    I developed firmware for RPM measurement, battery monitoring via ADC, and PID-based motor control with automatic assist logic.
+  </p>
+
+  <h4 style="padding-left:30px; margin-top:15px;">🔗 System Integration & Testing</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    I handled wiring, full system integration, and conducted real-world testing to optimize responsiveness and stability.
+  </p>
+
+  <!-- Value -->
+  <h3 style="margin-top:30px; padding-left:20px;">🚀 Why This Project Matters</h3>
+
+  <ul style="line-height:1.8; font-size:16px; padding-left:60px;">
+    <li>✅ Assists riders during startup and uphill conditions</li>
+    <li>✅ Improves comfort and accessibility</li>
+    <li>✅ Demonstrates real-time embedded control systems</li>
+    <li>✅ Integrates mechanical, electrical, and software engineering</li>
+  </ul>
+
+  <!-- Closing -->
+  <h3 style="margin-top:30px; padding-left:20px;">🌟 Final Thoughts</h3>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    This project shows how a simple idea—assisting a bicycle at startup—can evolve into a smart and responsive system through engineering. By combining sensors, control algorithms, and mechanical design, it delivers a practical solution for everyday mobility.
+  </p>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    It’s a strong example of how embedded systems can transform conventional machines into intelligent and adaptive devices.
+  </p>
+
+  <!-- Carousel Gallery -->
+  <div class="gallery-wrapper">
+    <button class="gallery-btn prev" id="galleryPrev">&#10094;</button>
+    <div class="gallery">
+      <div class="gallery-track" id="galleryTrack">
+        <div class="gallery-slide"><img src="nina/nina1.png" data-index="0" class="gallery-img" alt="Gallery image 1"></div>
+        <div class="gallery-slide"><img src="nina/nina2.png" data-index="1" class="gallery-img" alt="Gallery image 2"></div>
+        <div class="gallery-slide"><img src="nina/nina3.png" data-index="2" class="gallery-img" alt="Gallery image 3"></div>
+        <div class="gallery-slide"><img src="nina/nina4.png" data-index="3" class="gallery-img" alt="Gallery image 4"></div>
+        <div class="gallery-slide"><img src="nina/nina5.png" data-index="4" class="gallery-img" alt="Gallery image 5"></div>
+      </div>
+    </div>
+    <button class="gallery-btn next" id="galleryNext">&#10095;</button>
+    <div class="gallery-dots" id="galleryDots"></div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <button class="lightbox-prev">&#10094;</button>
+    <button class="lightbox-next">&#10095;</button>
+    <img id="lightbox-img" class="lightbox-img" alt="Gallery preview">
+    <div class="lightbox-counter"><span id="current-img">1</span> / <span id="total-img">6</span></div>
+  </div>
+
+  <!-- Back Button -->
+  <button class="back-btn" onclick="goBack()">Back</button>
+
+</div>
+
+<script src="blog-common.js"></script>
+
+</body>
+</html>

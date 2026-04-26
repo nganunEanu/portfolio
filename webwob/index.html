@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Blog</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      --text-primary: #fff;
+      --text-secondary: #e0e0e0;
+      --shadow: 0 20px 40px rgba(0,0,0,0.1);
+      --shadow-hover: 0 30px 60px rgba(0,0,0,0.2);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--secondary-gradient);
+      color: #333;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: var(--primary-gradient);
+      color: var(--text-primary);
+      padding: 1.5rem 0;
+      text-align: center;
+      position: relative;
+      box-shadow: var(--shadow);
+      margin-bottom: 3rem;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: -2rem;
+      left: 0;
+      right: 0;
+      height: 4rem;
+      background: linear-gradient(to bottom, var(--primary-gradient), var(--secondary-gradient));
+      z-index: -1;
+    }
+
+    header h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      background: linear-gradient(45deg, yellow, orange);
+      -webkit-background-clip: text;
+      -webkit-text-stroke: 1px transparent;
+      background-clip: text;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .back-btn {
+      position: absolute;
+      left: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: white;
+      padding: 12px 20px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 14px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    .back-btn:hover {
+      background: rgba(255,255,255,0.3);
+      transform: translateY(-50%) translateX(-5px);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Back to Top */
+    .to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--primary-gradient);
+      color: white;
+      border: none;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      opacity: 0;
+      transform: scale(0.8);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 1000;
+      box-shadow: var(--shadow-hover);
+      backdrop-filter: blur(20px);
+    }
+
+    .to-top.show {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .to-top:hover {
+      transform: scale(1.1) rotate(360deg);
+      box-shadow: 0 20px 50px rgba(102, 126, 234, 0.4);
+    }
+
+    /* Featured Post */
+    .featured-link {
+      display: block;
+      height: clamp(300px, 40vh, 400px);
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      border-radius: 24px;
+      overflow: hidden;
+      margin-bottom: 4rem;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://picsum.photos/1200/600');
+      box-shadow: var(--shadow);
+    }
+
+    .featured-link:hover {
+      transform: translateY(-15px) scale(1.02);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .featured-link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(transparent 0%, rgba(0,0,0,1) 60%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 1;
+    }
+
+    .featured-link:hover::before {
+      opacity: 1;
+    }
+
+    .featured-link .overlay {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+      z-index: 2;
+    }
+
+    .featured-link h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      position: absolute;
+      bottom: 2rem;
+      left: 2rem;
+      right: 2rem;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(10px);
+      color: yellow;
+      -webkit-text-stroke: 1px rgba(0,0,0,0.8);
+      padding: 1rem 1.5rem;
+      border-radius: 16px;
+      transition: all 0.4s ease;
+      font-weight: 600;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .featured-link:hover h2 {
+      bottom: 50%;
+      transform: translateY(50%);
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      left: 3rem;
+      right: 3rem;
+    }
+
+    .featured-desc {
+      position: absolute;
+      bottom: 2rem;
+      left: 3rem;
+      right: 3rem;
+      opacity: 0;
+      color: var(--text-secondary);
+      font-size: clamp(0.9rem, 2vw, 1.1rem);
+      line-height: 1.5;
+      transition: all 0.4s ease;
+      transform: translateY(20px);
+      z-index: 2;
+      backdrop-filter: blur(10px);
+      background: rgba(0,0,0,0.5);
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .featured-link:hover .featured-desc {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Post List */
+    .post-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .post-link.post {
+      position: relative;
+      height: 320px;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      background: white;
+      box-shadow: var(--shadow);
+    }
+
+    .post-link.post:hover {
+      transform: translateY(-20px) scale(1.02);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .post img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: filter 0.4s ease;
+    }
+
+    .post-link.post::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(transparent 0%, rgba(0,0,0,1) 60%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 1;
+    }
+
+    .post-link.post:hover::before {
+      opacity: 1;
+    }
+
+    .post-link.post:hover img {
+      filter: blur(2px) brightness(0.8);
+    }
+
+    .post-title {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent 0%, rgba(0,0,0,0.8) 30%);
+      color: yellow;
+      -webkit-text-stroke: 1px rgba(0,0,0,0.8);
+      padding: 1.5rem 1.5rem 1rem;
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      font-weight: 600;
+      transition: all 0.4s ease;
+      transform: translateY(0);
+      z-index: 2;
+    }
+
+    .post-link.post:hover .post-title {
+      opacity: 0;
+      transform: translateY(-4rem);
+      padding: 1rem 1.5rem;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+    }
+
+    .post-desc {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      right: 1.5rem;
+      opacity: 0;
+      color: var(--text-secondary);
+      font-size: clamp(0.85rem, 1.8vw, 1rem);
+      line-height: 1.5;
+      transition: all 0.4s ease;
+      transform: translateY(15px);
+      z-index: 2;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(15px);
+      padding: 1rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+
+    .post-link.post:hover .post-desc {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 1rem;
+      }
+      
+      .back-btn {
+        left: 1rem;
+        padding: 10px 15px;
+        font-size: 14px;
+      }
+      
+      .post-list {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+<header>
+  <button class="back-btn" onclick="history.back()">
+    <i class="fas fa-arrow-left"></i> Back
+  </button>
+  <h1>My Blog</h1>
+</header>
+
+<button class="to-top" onclick="scrollToTop()" title="Back to Top">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<div class="container">
+
+  <!-- Featured -->
+  <a href="skripsi.html" class="featured-link">
+    <div class="overlay">
+      <img src="skripsi/skripsi26.png">
+      <h2>Cashless Battery Exchange System with NFC & IoT</h2>
+      <p class="featured-desc">Building a Smart Energy Transaction System for My Undergraduate Thesis 🔋</p>
+    </div>
+  </a>
+
+  <!-- Post Lists -->
+  <div class="post-list">
+    <a href="reyrole.html" class="post-link post">
+      <img src="vpa/reyrole%202.png">
+      <div class="post-title">Reyrolle Relay Protection Demo Module</div>
+      <p class="post-desc">Menjelaskan Sistem Proteksi Listrik dengan Cara yang Lebih Visual</p>
+    </a>
+    <a href="s7-1500.html" class="post-link post">
+      <img src="vpa/s7-15006.jpeg">
+      <div class="post-title">Membawa Otomasi Industri ke Demo Nyata dengan PLC</div>
+      <p class="post-desc">Visualisasi Sistem Kontrol Real-Time dengan Siemens S7-1500 </p>
+    </a>
+    <a href="simocode.html" class="post-link post">
+      <img src="vpa/simocode7.png">
+      <div class="post-title">From Wiring to Intelligence: SIMOCODE-Based Motor Control Demo</div>
+      <p class="post-desc">Visualizing Industrial Motor Control in a Hands-On Demo ⚙️ ⚡</p>
+    </a>
+  </div>
+
+  <div class="post-list">
+    <a href="dian.html" class="post-link post">
+      <img src="dian/dian1.png">
+      <div class="post-title">Smelling Durian with Machines</div>
+      <p class="post-desc">A Smarter Way to Detect Ripeness 🍃</p>
+    </a>
+    <a href="nina.html" class="post-link post">
+      <img src="nina/nina5.png">
+      <div class="post-title">Smart E-Bike Assist Kit with ESP32</div>
+      <p class="post-desc">Intelligent Pedal Assistance for a Smoother Ride 🚴‍♂️</p>
+    </a>
+    <a href="shoes.html" class="post-link post">
+      <img src="shoes/shoes1.png">
+      <div class="post-title">Smarter Shoe Care: Anti-Bacterial Drying System with PID Control</div>
+      <p class="post-desc">Combining Controlled Heating and Ozone Sterilization for Better Hygiene 👟</p>
+    </a>
+  </div>
+
+  <div class="post-list">
+    <a href="urban.html" class="post-link post">
+      <img src="urban%20sport/urban%20sport9.jpg">
+      <div class="post-title">Membangun Game Interaktif Berbasis Sensor & Computer Vision</div>
+      <p class="post-desc">Dari Gerakan Tubuh ke Gameplay Real-Time 🎮</p>
+    </a>
+    <a href="pv.html" class="post-link post">
+      <img src="pv/pv6.jpeg">
+      <div class="post-title">Smarter Solar: Building an IoT-Based Flexible PV System</div>
+      <p class="post-desc">Mengoptimalkan Energi Surya dengan Tracking dan Monitoring Real-Time ☀️</p>
+    </a>
+    <a href="walet.html" class="post-link post">
+      <img src="walet/walet2.png">
+      <div class="post-title">Automating Swallow Nest Quality with AI Vision</div>
+      <p class="post-desc">Bringing Consistency to Traditional Inspection Using Computer Vision 🐦</p>
+    </a>
+  </div>
+    <div class="post-list">
+    <a href="stunting.html" class="post-link post">
+      <img src="mas%20ang/mas%20ang1.png">
+      <div class="post-title">Smart Stunting Detection with 3D Scanning & AI</div>
+      <p class="post-desc">Transforming Health Screening with Computer Vision and Machine Learning 🧍‍♂️</p>
+    </a>
+    <a href="fatigue.html" class="post-link post">
+      <img src="fatigue/fatigue1.png">
+      <div class="post-title">Measuring Human Reaction Time with IoT</div>
+      <p class="post-desc">From Simple Stimulus to Real-Time Insight ⚡</p>
+    </a>
+    <a href="drabala.html" class="post-link post">
+      <img src="drabala/drabala3.png">
+      <div class="post-title">Drabala: Engineering an Underwater Drone from Scratch</div>
+      <p class="post-desc">From CAD Design to a Fully Functional ROV 🌊</p>
+    </a>
+  </div>
+    <div class="post-list">
+    <a href="mba%20nab.html" class="post-link post">
+      <img src="tomat/tomat5.jpeg">
+      <div class="post-title">Tomatoes Smart Monitoring</div>
+      <p class="post-desc">Building an Automated Plant Care System</p>
+    </a>
+    <a href="load%20batt.html" class="post-link post">
+      <img src="sepeda%20listrik/sepeda1.png">
+      <div class="post-title">Evaluating Battery Performance: 72V 25Ah SLA Charge–Discharge Test</div>
+      <p class="post-desc">Understanding Real-World Battery Behavior Under Load 🔋</p>
+    </a>
+    <a href="pid%20bldc.html" class="post-link post">
+      <img src="sepeda%20listrik/sepeda5.png">
+      <div class="post-title">Smoother Ride with Smart Control: PID-Based E-Bike System</div>
+      <p class="post-desc">Enhancing Motor Response Without Modifying the Controller ⚡</p>
+    </a>
+  </div>
+    <div class="post-list">
+    <a href="ngajar.html" class="post-link post">
+      <img src="ngajar/ngajar2.jpg">
+      <div class="post-title">Inspiring the Next Generation: Robotics Seminar for High School Students</div>
+      <p class="post-desc">Making Robotics Accessible, Engaging, and Future-Focused 🤖</p>
+    </a>
+    <a href="amuros%20mech.html" class="post-link post">
+      <img src="amuros/amuros4.png">
+      <div class="post-title">>Designing a KRSBiB Soccer Robot in CAD</div>
+      <p class="post-desc">From Concept to Manufacturing-Ready Design ⚽</p>
+    </a>
+    <a href="amuros%20yolo.html" class="post-link post">
+      <img src="amuros/amuros12.jpg">
+      <div class="post-title">ATeaching a Soccer Robot to See: YOLO on Amuros KRSBi-B<</div>
+      <p class="post-desc">Real-Time Vision for Autonomous Robot Soccer ⚽🤖</p>
+    </a>
+  </div>
+    <div class="post-list">
+    <a href="arm.html" class="post-link post">
+      <img src="arm%20robot/arm2.jpg">
+      <div class="post-title">Building a Robotic Arm for Hands-On Learning</div>
+      <p class="post-desc">Turning Simple Inputs into Real Mechanical Motion 🤖</p>
+    </a>
+    <a href="BOD.html" class="post-link post">
+      <img src="BOD/bod1.png">
+      <div class="post-title">>Predicting Water Quality with AI: BOD Estimation System</div>
+      <p class="post-desc">Turning Environmental Data into Instant Insight with Machine Learning 💧</p>
+    </a>
+    <a href="SCARA.html" class="post-link post">
+      <img src="SCARA/SCARA3.png">
+      <div class="post-title">Learning Inverse Kinematics with AI: SCARA Angle Prediction</div>
+      <p class="post-desc">Replacing Complex Math with Fast Neural Network Predictions 🤖</p>
+    </a>
+  </div>
+</div>
+
+<script>
+  // Back to top
+  window.onscroll = function() {
+    const btn = document.querySelector('.to-top');
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      btn.classList.add('show');
+    } else {
+      btn.classList.remove('show');
+    }
+  };
+
+  function scrollToTop() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+</script>
+
+</body>
+</html>

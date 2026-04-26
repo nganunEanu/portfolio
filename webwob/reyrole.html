@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Blog</title>
+  <link rel="stylesheet" href="icomoon/icomoon/style.css">
+  <link rel="stylesheet" href="blog-common.css">
+</head>
+<body>
+
+  
+<header>
+  <a href="index.html" class="header-back-btn"><span class="icon-back"></span></a>
+  <h1>My Blog</h1>
+  <a href="../index.html" class="header-home-btn"><span class="icon-home"></span></a>
+</header>
+
+<!-- Blog Detail -->
+<div class="container blog-detail" id="detail">
+  
+  <!-- Title -->
+  <h2 id="title">Reyrolle Relay Protection Demo Module</h2>
+  <p style="text-align:center; font-size:18px; margin-top:-10px; margin-bottom:20px; color:#666;">
+    Menjelaskan Sistem Proteksi Listrik dengan Cara yang Lebih Visual ⚡
+  </p>
+
+  <img class="main" src="vpa/reyrole%202.png">
+
+  <!-- Intro -->
+  <p style="line-height:1.8; font-size:16px; margin:20px 0; text-align:justify; padding-left:20px;">
+    Sistem proteksi listrik sering terdengar kompleks—relay, fault, trip, hingga kurva waktu yang sulit dipahami. Tantangannya bukan hanya memahami sistem tersebut, tetapi juga menjelaskannya ke customer dengan cara yang sederhana dan mudah dicerna.
+  </p>
+
+  <p style="line-height:1.8; font-size:16px; margin:20px 0; text-align:justify; padding-left:20px;">
+    Proyek ini hadir untuk menjawab tantangan tersebut melalui pembuatan <strong>Reyrolle Relay Protection Demo Module</strong>—sebuah modul fisik yang mensimulasikan cara kerja sistem proteksi listrik secara nyata dan interaktif.
+  </p>
+
+  <!-- Section -->
+  <h3 style="margin-top:30px; padding-left:20px;">🔌 Apa Itu Reyrolle Protection Relay?</h3>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    Relay proteksi seperti <strong>Reyrolle protection relay</strong> digunakan untuk mendeteksi kondisi abnormal dalam sistem listrik, seperti arus lebih (overcurrent), dan secara otomatis memutuskan rangkaian untuk mencegah kerusakan lebih lanjut.
+  </p>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    Dalam modul ini, relay tidak hanya dipasang sebagai komponen tunggal, tetapi diintegrasikan dengan sumber tegangan, beban, serta sistem trip dan indikator fault. Hal ini memungkinkan seluruh proses proteksi dapat diamati secara langsung.
+  </p>
+
+  <!-- Section -->
+  <h3 style="margin-top:30px; padding-left:20px;">🧠 Simulasi Fungsi Proteksi: 50 & 51</h3>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    Salah satu inti dari proyek ini adalah pengujian dua fungsi proteksi utama:
+  </p>
+
+  <ul style="line-height:1.8; font-size:16px; padding-left:60px;">
+    <li><strong>50 – Instantaneous Overcurrent</strong><br>
+      Relay akan langsung trip ketika arus melebihi batas tertentu, tanpa delay.
+    </li>
+    <li><strong>51 – Time Overcurrent</strong><br>
+      Relay bekerja dengan karakteristik waktu—semakin besar arus, semakin cepat trip terjadi.
+    </li>
+  </ul>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    Dengan konfigurasi ini, pengguna dapat melihat bagaimana sistem bereaksi terhadap berbagai kondisi gangguan, mulai dari overload ringan hingga fault besar.
+  </p>
+
+  <!-- Role -->
+  <h3 style="margin-top:30px; padding-left:20px;">🛠️ Peran Saya dalam Proyek</h3>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    Saya terlibat penuh dari tahap desain hingga implementasi di lapangan, memastikan sistem tidak hanya bekerja dengan baik tetapi juga mudah dipahami oleh pengguna.
+  </p>
+
+  <h4 style="padding-left:30px; margin-top:15px;">📐 1. Desain Wiring (EPLAN)</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    Saya merancang seluruh skema wiring menggunakan EPLAN Electric P8, dengan fokus pada kejelasan, standar industri, dan kemudahan interpretasi untuk kebutuhan demonstrasi.
+  </p>
+
+  <h4 style="padding-left:30px; margin-top:15px;">🔧 2. Manufaktur Modul</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    Proses ini mencakup perakitan panel, instalasi relay, MCB, terminal, indikator, serta pengkabelan sesuai desain. Kerapian dan kualitas instalasi menjadi prioritas utama karena modul digunakan sebagai alat presentasi.
+  </p>
+
+  <h4 style="padding-left:30px; margin-top:15px;">⚙️ 3. Pengujian & Validasi Sistem</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    Saya melakukan pengujian fungsi trip, simulasi kondisi fault, serta verifikasi respon proteksi 50 dan 51 untuk memastikan sistem bekerja sesuai standar proteksi listrik.
+  </p>
+
+  <!-- Value -->
+  <h3 style="margin-top:30px; padding-left:20px;">🚀 Nilai dari Proyek Ini</h3>
+
+  <ul style="line-height:1.8; font-size:16px; padding-left:60px;">
+    <li>✅ Edukasi visual tanpa perlu akses ke sistem nyata</li>
+    <li>✅ Simulasi aman untuk kondisi fault</li>
+    <li>✅ Demonstrasi real-time sistem proteksi</li>
+    <li>✅ Mempermudah pemahaman konsep teknis</li>
+  </ul>
+
+  <!-- Closing -->
+  <h3 style="margin-top:30px; padding-left:20px;">⚙️ Penutup</h3>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    Proyek ini membuktikan bahwa sistem proteksi listrik tidak harus selalu abstrak dan sulit dipahami. Dengan pendekatan visual dan interaktif, konsep kompleks seperti overcurrent protection dapat dijelaskan dengan lebih jelas.
+  </p>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    Bagi saya, ini bukan sekadar membangun modul, tetapi menjembatani teori dan praktik—serta membantu orang lain memahami bagaimana sistem listrik melindungi dirinya sendiri.
+  </p>
+  <!-- Carousel Gallery -->
+  <div class="gallery-wrapper">
+    <button class="gallery-btn prev" id="galleryPrev">&#10094;</button>
+    <div class="gallery">
+      <div class="gallery-track" id="galleryTrack">
+        <div class="gallery-slide"><img src="vpa/reyrole%201.png" data-index="0" class="gallery-img" alt="Gallery image 1"></div>
+        <div class="gallery-slide"><img src="vpa/reyrole1.png" data-index="0" class="gallery-img" alt="Gallery image 1"></div>
+        <div class="gallery-slide"><img src="vpa/reyrole2.jpg" data-index="1" class="gallery-img" alt="Gallery image 2"></div>
+        <div class="gallery-slide"><img src="vpa/reyrole3.jpg" data-index="2" class="gallery-img" alt="Gallery image 3"></div>
+        <div class="gallery-slide"><img src="vpa/reyrole4.png" data-index="3" class="gallery-img" alt="Gallery image 4"></div>
+        <div class="gallery-slide"><img src="vpa/reyrole5.png" data-index="4" class="gallery-img" alt="Gallery image 5"></div>
+        <div class="gallery-slide"><img src="vpa/reyrole6.png" data-index="5" class="gallery-img" alt="Gallery image 6"></div>
+        <div class="gallery-slide"><img src="vpa/reyrole7.png" data-index="6" class="gallery-img" alt="Gallery image 7"></div>
+        <div class="gallery-slide"><img src="vpa/reyrole8.png" data-index="7" class="gallery-img" alt="Gallery image 8"></div>
+        <div class="gallery-slide"><img src="vpa/reyrole9.png" data-index="8" class="gallery-img" alt="Gallery image 9"></div>
+        <div class="gallery-slide"><img src="vpa/reyrole10.png" data-index="9" class="gallery-img" alt="Gallery image 10"></div>
+        <div class="gallery-slide"><img src="vpa/reyrole11.png" data-index="10" class="gallery-img" alt="Gallery image 11"></div>
+        <div class="gallery-slide"><img src="vpa/reyrole12.png" data-index="11" class="gallery-img" alt="Gallery image 12"></div>
+      </div>
+    </div>
+    <button class="gallery-btn next" id="galleryNext">&#10095;</button>
+    <div class="gallery-dots" id="galleryDots"></div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <button class="lightbox-prev">&#10094;</button>
+    <button class="lightbox-next">&#10095;</button>
+    <img id="lightbox-img" class="lightbox-img" alt="Gallery preview">
+    <div class="lightbox-counter"><span id="current-img">1</span> / <span id="total-img">6</span></div>
+  </div>
+
+  <!-- Back Button -->
+  <button class="back-btn" onclick="goBack()">Back</button>
+
+</div>
+
+<script src="blog-common.js"></script>
+
+</body>
+</html>

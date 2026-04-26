@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Blog</title>
+  <link rel="stylesheet" href="icomoon/icomoon/style.css">
+  <link rel="stylesheet" href="blog-common.css">
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="header-back-btn"><span class="icon-back"></span></a>
+  <h1>My Blog</h1>
+  <a href="../index.html" class="header-home-btn"><span class="icon-home"></span></a>
+</header>
+
+<!-- Blog Detail -->
+<div class="container blog-detail" id="detail">
+  
+  <!-- Title -->
+  <h2 id="title">Smoother Ride with Smart Control: PID-Based E-Bike System</h2>
+  <p style="text-align:center; font-size:18px; margin-top:-10px; margin-bottom:20px; color:#666;">
+    Enhancing Motor Response Without Modifying the Controller ⚡
+  </p>
+
+  <img class="main" src="sepeda%20listrik/sepeda5.png">
+
+  <!-- Intro -->
+  <p style="line-height:1.8; font-size:16px; margin:20px 0; text-align:justify; padding-left:20px;">
+    Electric bikes are efficient—but ride quality depends heavily on how smoothly the motor responds to throttle input. Sudden acceleration, noisy signals, or unstable behavior can make the experience feel unnatural.
+  </p>
+
+  <p style="line-height:1.8; font-size:16px; margin:20px 0; text-align:justify; padding-left:20px;">
+    This project introduces a <strong>PID-based control system</strong> that improves motor response by adding an intelligent signal processing layer—without modifying the original motor controller.
+  </p>
+
+  <!-- Section -->
+  <h3 style="margin-top:30px; padding-left:20px;">🔄 Rethinking Throttle Control</h3>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    Instead of directly sending the throttle signal to the motor controller, the system processes it through a control loop:
+  </p>
+
+  <ul style="line-height:1.8; font-size:16px; padding-left:60px;">
+    <li>Throttle input is read using an external ADC</li>
+    <li>Signal is processed using a PID algorithm</li>
+    <li>Output is converted back to analog via DAC</li>
+    <li>Motor controller receives a refined throttle signal</li>
+  </ul>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    This approach allows smoother acceleration, reduced noise, and improved system stability.
+  </p>
+
+  <!-- Section -->
+  <h3 style="margin-top:30px; padding-left:20px;">🧠 Why PID?</h3>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    The PID (Proportional–Integral–Derivative) controller continuously adjusts output based on system error:
+  </p>
+
+  <ul style="line-height:1.8; font-size:16px; padding-left:60px;">
+    <li>Compares desired input (throttle) with feedback</li>
+    <li>Calculates error in real time</li>
+    <li>Adjusts output to minimize deviation</li>
+  </ul>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    The result is:
+  </p>
+
+  <ul style="line-height:1.8; font-size:16px; padding-left:60px;">
+    <li>👉 Smoother acceleration</li>
+    <li>👉 Reduced oscillation</li>
+    <li>👉 More predictable motor response</li>
+  </ul>
+
+  <!-- Role -->
+  <h3 style="margin-top:30px; padding-left:20px;">🛠️ My Role in the Project</h3>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    I handled the full system development—from hardware design to firmware implementation.
+  </p>
+
+  <h4 style="padding-left:30px; margin-top:15px;">📐 PCB Design</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    Designed schematic and PCB layout integrating microcontroller, ADC, DAC, signal conditioning, and power regulation, with focus on analog signal integrity and noise reduction.
+  </p>
+
+  <h4 style="padding-left:30px; margin-top:15px;">🔧 PCB Assembly</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    Assembled and soldered all components, installed connectors, and verified electrical functionality.
+  </p>
+
+  <h4 style="padding-left:30px; margin-top:15px;">🔌 Wiring & Integration</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    Connected throttle input, feedback signals, and DAC output to the motor controller, ensuring stable and safe operation.
+  </p>
+
+  <h4 style="padding-left:30px; margin-top:15px;">💻 PID Programming</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    Developed the PID control algorithm, tuned parameters, and optimized performance for smooth and stable motor behavior.
+  </p>
+
+  <!-- Value -->
+  <h3 style="margin-top:30px; padding-left:20px;">🚀 What Makes This Approach Powerful?</h3>
+
+  <ul style="line-height:1.8; font-size:16px; padding-left:60px;">
+    <li>✅ No modification to original motor controller</li>
+    <li>✅ Improved ride comfort and smoothness</li>
+    <li>✅ Reduced signal noise and fluctuation</li>
+    <li>✅ High-resolution control via ADC & DAC</li>
+    <li>✅ Flexible tuning through software</li>
+  </ul>
+
+  <!-- Closing -->
+  <h3 style="margin-top:30px; padding-left:20px;">🌟 Final Thoughts</h3>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    This project demonstrates how adding an intelligent control layer can significantly enhance system performance without redesigning existing hardware. By combining embedded systems, analog design, and control theory, the result is a more refined and responsive riding experience.
+  </p>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    Sometimes, the best upgrade isn’t replacing the system—it’s making it smarter.
+  </p>
+  <!-- Carousel Gallery -->
+  <div class="gallery-wrapper">
+    <button class="gallery-btn prev" id="galleryPrev">&#10094;</button>
+    <div class="gallery">
+      <div class="gallery-track" id="galleryTrack">
+        <div class="gallery-slide"><img src="sepeda%20listrik/sepeda3.png" data-index="0" class="gallery-img" alt="Gallery image 1"></div>
+        <div class="gallery-slide"><img src="sepeda%20listrik/sepeda4.png" data-index="1" class="gallery-img" alt="Gallery image 2"></div>
+        <div class="gallery-slide"><img src="sepeda%20listrik/sepeda5.png" data-index="2" class="gallery-img" alt="Gallery image 3"></div>
+
+    </div>
+    <button class="gallery-btn next" id="galleryNext">&#10095;</button>
+    <div class="gallery-dots" id="galleryDots"></div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <button class="lightbox-prev">&#10094;</button>
+    <button class="lightbox-next">&#10095;</button>
+    <img id="lightbox-img" class="lightbox-img" alt="Gallery preview">
+    <div class="lightbox-counter"><span id="current-img">1</span> / <span id="total-img">6</span></div>
+  </div>
+
+  <!-- Back Button -->
+  <button class="back-btn" onclick="goBack()">Back</button>
+
+</div>
+
+<script src="blog-common.js"></script>
+
+</body>
+</html>

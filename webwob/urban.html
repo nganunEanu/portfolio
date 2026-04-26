@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Blog</title>
+  <link rel="stylesheet" href="icomoon/icomoon/style.css">
+  <link rel="stylesheet" href="blog-common.css">
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="header-back-btn"><span class="icon-back"></span></a>
+  <h1>My Blog</h1>
+  <a href="../index.html" class="header-home-btn"><span class="icon-home"></span></a>
+</header>
+
+<!-- Blog Detail -->
+<div class="container blog-detail" id="detail">
+  
+  <!-- Title -->
+  <h2 id="title">Membangun Game Interaktif Berbasis Sensor & Computer Vision</h2>
+  <p style="text-align:center; font-size:18px; margin-top:-10px; margin-bottom:20px; color:#666;">
+    Dari Gerakan Tubuh ke Gameplay Real-Time 🎮
+  </p>
+
+  <img class="main" src="urban%20sport/urban%20sport9.jpg">
+
+  <!-- Intro -->
+  <p style="line-height:1.8; font-size:16px; margin:20px 0; text-align:justify; padding-left:20px;">
+    Bagaimana jika gerakan tubuh kita bisa langsung menjadi kontrol dalam sebuah game? Tidak perlu joystick, tidak perlu keyboard—cukup bergerak, dan sistem akan merespons secara real-time.
+  </p>
+
+  <p style="line-height:1.8; font-size:16px; margin:20px 0; text-align:justify; padding-left:20px;">
+    Itulah inti dari proyek ini: menggabungkan sensor, computer vision, dan komunikasi data real-time untuk menciptakan pengalaman bermain yang lebih imersif dan natural.
+  </p>
+
+  <!-- Section -->
+  <h3 style="margin-top:30px; padding-left:20px;">🎮 Lima Game, Lima Pendekatan</h3>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    Dalam proyek ini, dikembangkan lima jenis game interaktif, masing-masing dengan pendekatan teknologi yang berbeda:
+  </p>
+
+  <ul style="line-height:1.8; font-size:16px; padding-left:60px;">
+    <li><strong>Shooting Game</strong> → menggunakan IMU dan ESP32 untuk mendeteksi arah dan gerakan</li>
+    <li><strong>Tic-Tac-Toe</strong> → memanfaatkan kamera depth seperti Intel RealSense</li>
+    <li><strong>Ping Pong</strong> → menggunakan kamera dan OpenCV untuk pelacakan bola</li>
+    <li><strong>Running Game</strong> → berbasis pressure plate untuk mendeteksi langkah kaki</li>
+    <li><strong>Swimming Game</strong> → menggunakan gyroscope dari smartphone</li>
+  </ul>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    Setiap game dirancang untuk menerjemahkan gerakan fisik pemain menjadi input digital secara real-time, menciptakan interaksi yang jauh lebih natural dibandingkan kontrol konvensional.
+  </p>
+
+  <!-- Focus -->
+  <h3 style="margin-top:30px; padding-left:20px;">🧠 Fokus Saya: Deteksi Bola & Komunikasi Sistem</h3>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    Dalam keseluruhan proyek ini, saya berfokus pada dua bagian krusial di game ping pong: sistem deteksi bola dan komunikasi data antar sistem.
+  </p>
+
+  <!-- Detection -->
+  <h4 style="padding-left:30px; margin-top:15px;">🟠 1. Program Deteksi Bola</h4>
+
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    Saya mengembangkan sistem berbasis computer vision menggunakan OpenCV untuk mendeteksi dan melacak pergerakan bola secara real-time.
+  </p>
+
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    Tantangan utama dalam bagian ini meliputi:
+  </p>
+
+  <ul style="line-height:1.8; font-size:16px; padding-left:70px;">
+    <li>Membedakan bola dari background yang kompleks</li>
+    <li>Menjaga tracking tetap stabil saat bola bergerak cepat</li>
+    <li>Mengoptimalkan performa agar latency tetap rendah</li>
+  </ul>
+
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    Untuk mengatasi hal tersebut, saya menggunakan:
+  </p>
+
+  <ul style="line-height:1.8; font-size:16px; padding-left:70px;">
+    <li><strong>Color filtering / thresholding</strong> untuk isolasi objek</li>
+    <li><strong>Contour detection</strong> untuk mengenali bentuk bola</li>
+    <li><strong>Frame-by-frame tracking</strong> untuk menentukan arah dan kecepatan</li>
+  </ul>
+
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    Hasilnya adalah sistem yang mampu mendeteksi posisi bola secara konsisten dan cukup presisi untuk kebutuhan gameplay.
+  </p>
+
+  <!-- Communication -->
+  <h4 style="padding-left:30px; margin-top:15px;">🔗 2. Komunikasi antara Deteksi dan Game</h4>
+
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    Selain deteksi, saya juga merancang mekanisme komunikasi data antara program computer vision dan game engine.
+  </p>
+
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    Tujuan utama sistem ini:
+  </p>
+
+  <ul style="line-height:1.8; font-size:16px; padding-left:70px;">
+    <li>Mengirim posisi bola secara real-time</li>
+    <li>Menjaga sinkronisasi antara dunia nyata dan game</li>
+    <li>Meminimalkan delay agar gameplay tetap responsif</li>
+  </ul>
+
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    Pendekatan yang digunakan:
+  </p>
+
+  <ul style="line-height:1.8; font-size:16px; padding-left:70px;">
+    <li>Pengiriman data posisi (x, y) secara kontinu</li>
+    <li>Format data ringan untuk kecepatan pemrosesan</li>
+    <li>Desain modular agar mudah diintegrasikan</li>
+  </ul>
+
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    Bagian ini sangat krusial—deteksi yang akurat tidak akan terasa jika komunikasi datanya lambat.
+  </p>
+
+  <!-- Why -->
+  <h3 style="margin-top:30px; padding-left:20px;">🚀 Kenapa Proyek Ini Menarik?</h3>
+
+  <ul style="line-height:1.8; font-size:16px; padding-left:60px;">
+    <li>Embedded system (ESP32 & sensor)</li>
+    <li>Computer vision (OpenCV & kamera)</li>
+    <li>Real-time communication</li>
+    <li>Interactive system design</li>
+  </ul>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    Dengan pendekatan ini, game tidak lagi terbatas pada controller tradisional, tetapi dapat langsung menggunakan gerakan tubuh sebagai input utama.
+  </p>
+
+  <!-- Closing -->
+  <h3 style="margin-top:30px; padding-left:20px;">🌟 Penutup</h3>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    Proyek ini menunjukkan bagaimana dunia fisik dan digital bisa dihubungkan secara real-time. Mulai dari deteksi objek menggunakan kamera hingga integrasi langsung ke gameplay tanpa delay yang mengganggu.
+  </p>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    Ke depannya, konsep seperti ini memiliki potensi besar—tidak hanya untuk game, tetapi juga untuk olahraga interaktif, simulasi, dan berbagai aplikasi berbasis gerakan manusia.
+  </p>
+
+  <!-- Carousel Gallery -->
+  <div class="gallery-wrapper">
+    <button class="gallery-btn prev" id="galleryPrev">&#10094;</button>
+    <div class="gallery">
+      <div class="gallery-track" id="galleryTrack">
+        <div class="gallery-slide"><img src="urban%20sport/urban%20sport1.jpg" data-index="0" class="gallery-img" alt="Gallery image 1"></div>
+        <div class="gallery-slide"><img src="urban%20sport/urban%20sport2.jpg" data-index="1" class="gallery-img" alt="Gallery image 2"></div>
+        <div class="gallery-slide"><img src="urban%20sport/urban%20sport3.jpg" data-index="2" class="gallery-img" alt="Gallery image 3"></div>
+        <div class="gallery-slide"><img src="urban%20sport/urban%20sport4.jpg" data-index="3" class="gallery-img" alt="Gallery image 4"></div>
+        <div class="gallery-slide"><img src="urban%20sport/urban%20sport5.jpg" data-index="4" class="gallery-img" alt="Gallery image 5"></div>
+        <div class="gallery-slide"><img src="urban%20sport/urban%20sport6.jpg" data-index="5" class="gallery-img" alt="Gallery image 6"></div>
+        <div class="gallery-slide"><img src="urban%20sport/urban%20sport7.jpg" data-index="6" class="gallery-img" alt="Gallery image 7"></div>
+        <div class="gallery-slide"><img src="urban%20sport/urban%20sport8.jpg" data-index="7" class="gallery-img" alt="Gallery image 8"></div>
+        <div class="gallery-slide"><img src="urban%20sport/urban%20sport9.jpg" data-index="8" class="gallery-img" alt="Gallery image 9"></div>
+      </div>
+    </div>
+    <button class="gallery-btn next" id="galleryNext">&#10095;</button>
+    <div class="gallery-dots" id="galleryDots"></div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <button class="lightbox-prev">&#10094;</button>
+    <button class="lightbox-next">&#10095;</button>
+    <img id="lightbox-img" class="lightbox-img" alt="Gallery preview">
+    <div class="lightbox-counter"><span id="current-img">1</span> / <span id="total-img">6</span></div>
+  </div>
+
+  <!-- Back Button -->
+  <button class="back-btn" onclick="goBack()">Back</button>
+
+</div>
+
+<script src="blog-common.js"></script>
+
+</body>
+</html>

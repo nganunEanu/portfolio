@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Blog</title>
+  <link rel="stylesheet" href="icomoon/icomoon/style.css">
+  <link rel="stylesheet" href="blog-common.css">
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="header-back-btn"><span class="icon-back"></span></a>
+  <h1>My Blog</h1>
+  <a href="../index.html" class="header-home-btn"><span class="icon-home"></span></a>
+</header>
+
+<!-- Blog Detail -->
+<div class="container blog-detail" id="detail">
+  
+  <!-- Title -->
+  <h2 id="title">Smelling Durian with Machines</h2>
+  <p style="text-align:center; font-size:18px; margin-top:-10px; margin-bottom:20px; color:#666;">
+    A Smarter Way to Detect Ripeness 🍃
+  </p>
+
+  <img class="main" src="dian/dian1.png">
+
+  <!-- Intro -->
+  <p style="line-height:1.8; font-size:16px; margin:20px 0; text-align:justify; padding-left:20px;">
+    Durian—often called the <strong>“king of fruits”</strong>—is famous for its strong aroma and divisive reputation. For some, it’s a delicacy; for others, it’s overwhelming. But one thing everyone can agree on: determining the perfect ripeness is tricky. Traditionally, this relies on experience—smelling, tapping, or even shaking the fruit.
+  </p>
+
+  <p style="line-height:1.8; font-size:16px; margin:20px 0; text-align:justify; padding-left:20px;">
+    What if we could make this process more consistent, automated, and reliable?
+  </p>
+
+  <p style="line-height:1.8; font-size:16px; margin:20px 0; text-align:justify; padding-left:20px;">
+    That’s exactly where this project comes in.
+  </p>
+
+  <!-- Section -->
+  <h3 style="margin-top:30px; padding-left:20px;">🌡️ Turning Aroma into Data</h3>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    The idea behind this system is simple but powerful: use sensors to “smell” the durian and let an algorithm decide its ripeness.
+  </p>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    As durian ripens, it releases different volatile compounds that change over time. Instead of relying on human judgment, this system uses a combination of gas sensors—<strong>MQ-3</strong>, <strong>MQ-4</strong>, and <strong>MQ-134</strong>—to detect those compounds. Each sensor is sensitive to different gases, creating a more complete <em>“aroma profile”</em> of the fruit.
+  </p>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    These sensors continuously capture data, transforming what we normally perceive as smell into measurable electrical signals.
+  </p>
+
+  <!-- Section -->
+  <h3 style="margin-top:30px; padding-left:20px;">🧠 Why Fuzzy Logic?</h3>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    Real-world data isn’t always clean or precise—especially when dealing with natural processes like fruit ripening. That’s why this system uses fuzzy logic instead of traditional threshold-based methods.
+  </p>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    Instead of rigid rules like:
+  </p>
+
+  <p style="padding-left:40px; font-style:italic;">“If gas level &gt; X, then ripe”</p>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    Fuzzy logic allows gradual interpretations such as:
+  </p>
+
+  <ul style="line-height:1.8; font-size:16px; padding-left:60px;">
+    <li>Somewhat ripe</li>
+    <li>Almost ripe</li>
+  </ul>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    By combining readings from multiple sensors, the system classifies durian into:
+  </p>
+
+  <ul style="line-height:1.8; font-size:16px; padding-left:60px;">
+    <li><strong>Unripe</strong></li>
+    <li><strong>Semi-ripe</strong></li>
+    <li><strong>Ripe</strong></li>
+  </ul>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    The result is a more natural and reliable decision-making process—closer to human reasoning, but far more consistent.
+  </p>
+
+  <!-- Section -->
+  <h3 style="margin-top:30px; padding-left:20px;">🔧 My Role in the Project</h3>
+
+  <h4 style="padding-left:30px; margin-top:15px;">1. PCB Design</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    I designed the full electronic schematic and PCB layout, integrating the microcontroller with MQ-series gas sensors to ensure stable and efficient signal acquisition.
+  </p>
+
+  <h4 style="padding-left:30px; margin-top:15px;">2. Wiring & Hardware Integration</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    I handled sensor connections, signal conditioning circuits, and power distribution to maintain accurate and noise-free readings.
+  </p>
+
+  <h4 style="padding-left:30px; margin-top:15px;">3. Fuzzy Logic Programming</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    I developed the fuzzy logic algorithm, including membership functions and rule sets, to translate sensor data into meaningful ripeness classifications.
+  </p>
+
+  <!-- Section -->
+  <h3 style="margin-top:30px; padding-left:20px;">🚀 Why This Matters</h3>
+
+  <ul style="line-height:1.8; font-size:16px; padding-left:60px;">
+    <li>✅ Consistency improves – no more guesswork</li>
+    <li>✅ Automation becomes possible – ideal for scaling</li>
+    <li>✅ Data-driven decisions – better quality control</li>
+  </ul>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    This approach can extend beyond durian to other fruits and agricultural products, making post-harvest processes smarter and more efficient.
+  </p>
+
+  <!-- Closing -->
+  <h3 style="margin-top:30px; padding-left:20px;">🌱 Final Thoughts</h3>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    This project combines electronics, embedded systems, and artificial intelligence into a practical real-world solution. It shows how engineering can enhance even traditional processes like selecting fruit ripeness.
+  </p>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    And who knows? In the future, choosing a ripe durian might be as simple as reading a sensor—no nose required.
+  </p>
+
+  <!-- Carousel Gallery -->
+  <div class="gallery-wrapper">
+    <button class="gallery-btn prev" id="galleryPrev">&#10094;</button>
+    <div class="gallery">
+      <div class="gallery-track" id="galleryTrack">
+        <div class="gallery-slide"><img src="dian/dian1.png" data-index="0" class="gallery-img" alt="Gallery image 1"></div>
+        <div class="gallery-slide"><img src="dian/dian2.png" data-index="1" class="gallery-img" alt="Gallery image 2"></div>
+        <div class="gallery-slide"><img src="dian/dian3.jpeg" data-index="2" class="gallery-img" alt="Gallery image 3"></div>
+        <div class="gallery-slide"><img src="dian/dian4.jpeg" data-index="3" class="gallery-img" alt="Gallery image 4"></div>
+        <div class="gallery-slide"><img src="dian/dian5.jpeg" data-index="4" class="gallery-img" alt="Gallery image 5"></div>
+      </div>
+    </div>
+    <button class="gallery-btn next" id="galleryNext">&#10095;</button>
+    <div class="gallery-dots" id="galleryDots"></div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <button class="lightbox-prev">&#10094;</button>
+    <button class="lightbox-next">&#10095;</button>
+    <img id="lightbox-img" class="lightbox-img" alt="Gallery preview">
+    <div class="lightbox-counter"><span id="current-img">1</span> / <span id="total-img">6</span></div>
+  </div>
+
+  <!-- Back Button -->
+  <button class="back-btn" onclick="goBack()">Back</button>
+
+</div>
+
+<script src="blog-common.js"></script>
+
+</body>
+</html>

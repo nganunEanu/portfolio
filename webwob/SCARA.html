@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Blog</title>
+  <link rel="stylesheet" href="icomoon/icomoon/style.css">
+  <link rel="stylesheet" href="blog-common.css">
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="header-back-btn"><span class="icon-back"></span></a>
+  <h1>My Blog</h1>
+  <a href="../index.html" class="header-home-btn"><span class="icon-home"></span></a>
+</header>
+
+<!-- Blog Detail -->
+<div class="container blog-detail" id="detail">
+  
+  <!-- Title -->
+  <h2 id="title">Learning Inverse Kinematics with AI: SCARA Angle Prediction</h2>
+  <p style="text-align:center; font-size:18px; margin-top:-10px; margin-bottom:20px; color:#666;">
+    Replacing Complex Math with Fast Neural Network Predictions 🤖
+  </p>
+
+  <img class="main" src="SCARA/SCARA3.png">
+
+  <!-- Intro -->
+  <p style="line-height:1.8; font-size:16px; margin:20px 0; text-align:justify; padding-left:20px;">
+    Traditional inverse kinematics for a SCARA robot can be solved analytically—but it often involves complex trigonometry, multiple valid solutions, and edge cases. This project explores a modern alternative by using <strong>deep learning</strong> to learn the mapping from position to joint angles.
+  </p>
+
+  <p style="line-height:1.8; font-size:16px; margin:20px 0; text-align:justify; padding-left:20px;">
+    With a neural network built using <strong>Keras</strong>, the system can predict joint angles quickly and efficiently, enabling real-time robotic control without relying solely on mathematical equations.
+  </p>
+
+  <!-- Section -->
+  <h3 style="margin-top:30px; padding-left:20px;">⚙️ From (X, Y) Position to Joint Angles</h3>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    A SCARA robot typically uses two rotational joints:
+  </p>
+
+  <ul style="line-height:1.8; font-size:16px; padding-left:60px;">
+    <li><strong>θ1</strong> → base joint</li>
+    <li><strong>θ2</strong> → second link joint</li>
+  </ul>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    The goal is to determine these angles based on a desired end-effector position (X, Y). Instead of solving equations manually, the neural network approximates this inverse kinematics function.
+  </p>
+
+  <!-- Section -->
+  <h3 style="margin-top:30px; padding-left:20px;">🧠 Why Use a Neural Network?</h3>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    Inverse kinematics can be:
+  </p>
+
+  <ul style="line-height:1.8; font-size:16px; padding-left:60px;">
+    <li>Complex for nonlinear systems</li>
+    <li>Ambiguous with multiple valid solutions</li>
+    <li>Sensitive to singularities</li>
+  </ul>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    A trained model offers several advantages:
+  </p>
+
+  <ul style="line-height:1.8; font-size:16px; padding-left:60px;">
+    <li>Learns nonlinear relationships directly from data</li>
+    <li>Provides fast predictions for real-time control</li>
+    <li>Easy integration into simulation or embedded systems</li>
+  </ul>
+
+  <!-- Role -->
+  <h3 style="margin-top:30px; padding-left:20px;">🛠️ My Role in the Project</h3>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    I handled the complete machine learning pipeline, from dataset creation to deployment and testing.
+  </p>
+
+  <h4 style="padding-left:30px; margin-top:15px;">📊 Dataset Collection & Preparation</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    Generated and structured SCARA configurations, mapping joint angles (θ1, θ2) to corresponding (X, Y) positions for supervised learning.
+  </p>
+
+  <h4 style="padding-left:30px; margin-top:15px;">🔄 Data Preprocessing</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    Normalized inputs and outputs, ensured consistent scaling, and split data into training and validation sets.
+  </p>
+
+  <h4 style="padding-left:30px; margin-top:15px;">🤖 Model Development (Keras)</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    Designed and trained a regression neural network, tuning architecture and parameters for optimal performance.
+  </p>
+
+  <h4 style="padding-left:30px; margin-top:15px;">📈 Model Evaluation & Optimization</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    Evaluated performance using error metrics such as MSE and refined the model to improve accuracy and stability.
+  </p>
+
+  <h4 style="padding-left:30px; margin-top:15px;">💾 Model Deployment</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    Saved the trained model and prepared it for integration into control and simulation environments.
+  </p>
+
+  <h4 style="padding-left:30px; margin-top:15px;">🔗 System Integration</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    Integrated the model into a real-time system to predict joint angles and drive robotic motion.
+  </p>
+
+  <h4 style="padding-left:30px; margin-top:15px;">🧪 Testing & Validation</h4>
+  <p style="line-height:1.8; font-size:16px; margin:5px 0; text-align:justify; padding-left:30px;">
+    Tested model accuracy and responsiveness in simulation, ensuring smooth and precise robot movement.
+  </p>
+
+  <!-- Value -->
+  <h3 style="margin-top:30px; padding-left:20px;">🚀 Why This Project Matters</h3>
+
+  <ul style="line-height:1.8; font-size:16px; padding-left:60px;">
+    <li>✅ Simplifies inverse kinematics using AI</li>
+    <li>✅ Enables fast real-time robotic control</li>
+    <li>✅ Reduces reliance on complex mathematical models</li>
+    <li>✅ Demonstrates practical ML application in robotics</li>
+  </ul>
+
+  <!-- Closing -->
+  <h3 style="margin-top:30px; padding-left:20px;">🌟 Final Thoughts</h3>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    This project highlights how machine learning can complement traditional robotics approaches. Instead of replacing physics-based models, it provides a fast, flexible alternative for solving complex problems.
+  </p>
+
+  <p style="line-height:1.8; font-size:16px; margin:10px 0; text-align:justify; padding-left:20px;">
+    In applications such as simulation, education, and adaptive control, AI-driven inverse kinematics opens new possibilities—transforming complex equations into learned behavior.
+  </p>
+
+  <!-- Carousel Gallery -->
+  <div class="gallery-wrapper">
+    <button class="gallery-btn prev" id="galleryPrev">&#10094;</button>
+    <div class="gallery">
+      <div class="gallery-track" id="galleryTrack">
+        <div class="gallery-slide"><img src="SCARA/SCARA1.png" data-index="0" class="gallery-img" alt="Gallery image 1"></div>
+        <div class="gallery-slide"><img src="SCARA/SCARA2.png" data-index="1" class="gallery-img" alt="Gallery image 2"></div>
+        <div class="gallery-slide"><img src="SCARA/SCARA3.png" data-index="2" class="gallery-img" alt="Gallery image 3"></div>
+      </div>
+    </div>
+    <button class="gallery-btn next" id="galleryNext">&#10095;</button>
+    <div class="gallery-dots" id="galleryDots"></div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <button class="lightbox-prev">&#10094;</button>
+    <button class="lightbox-next">&#10095;</button>
+    <img id="lightbox-img" class="lightbox-img" alt="Gallery preview">
+    <div class="lightbox-counter"><span id="current-img">1</span> / <span id="total-img">6</span></div>
+  </div>
+
+  <!-- Back Button -->
+  <button class="back-btn" onclick="goBack()">Back</button>
+
+</div>
+
+<script src="blog-common.js"></script>
+
+</body>
+</html>
