@@ -7,12 +7,12 @@
 }
 
 body {
-  background: #f5f5f5;
+  background: #ff66c4;;
   color: #333;
 }
 
 header {
-  background: #111;
+  background: #20369e;
   color: white;
   padding: 20px;
   text-align: center;
@@ -83,12 +83,28 @@ header {
 
 /* ===== BLOG DETAIL ===== */
 .blog-detail {
-  background: white;
+  background: #be4c93;
   padding: 20px;
   border-radius: 10px;
 }
 
+.blog-detail h2{
+  color: white;
+}
+.blog-detail h3{
+  color: white;
+}
+.blog-detail h4{
+  color: white;
+}
+
+.blog-detail li{
+  color: white;
+}
+
+
 .blog-detail p {
+  color: #f1f1f1;
   text-indent: 2em;
   padding-left: 20px;
 }

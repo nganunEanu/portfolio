@@ -111,6 +111,10 @@
       z-index: 1000;
       box-shadow: var(--shadow-hover);
       backdrop-filter: blur(20px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
     }
 
     .to-top.show {
@@ -348,15 +352,15 @@
 <body>
 
 <header>
-  <button class="back-btn" onclick="history.back()">
+  <a class="back-btn" href="../index.html">
     <i class="fas fa-arrow-left"></i> Back
-  </button>
-  <h1>My Blog</h1>
+  </a>
+  <h1>My Portfolio</h1>
 </header>
 
-<button class="to-top" onclick="scrollToTop()" title="Back to Top">
+<a href="../index.html" class="to-top" title="Back to Top" onclick="scrollToTop(); return false;">
   <i class="fas fa-arrow-up"></i>
-</button>
+</a>
 
 <div class="container">
 
