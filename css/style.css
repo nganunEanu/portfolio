@@ -8,7 +8,7 @@
 :root { 
   /* 🎨 FONTS - CHANGE ALL SIZES & TYPES HERE */
   --font-primary: "Space Mono", Arial, serif;
-  --font-script: "Chango", cursive;
+  --font-script: "Kaushan Script", cursive;
   --font-size-body: 16px;
   --font-size-h1: 60px;
   --font-size-h2: 70px;
@@ -40,9 +40,9 @@
   --section-margin-top: 100px;
   --section-margin-bottom: 50px;
   --hero-margin-top: 0px;
-  --hero-margin-bottom: 100px;
+  --hero-margin-bottom: 50px;
   --about-margin-top: 10px;
-  --about-margin-bottom: 605px;
+  --about-margin-bottom: 60px;
   --tools-margin-top: 80px;
   --tools-margin-bottom: 60px;
   --features-margin-top: 80px;
@@ -50,11 +50,11 @@
   --work-margin-top: 100px;
   --work-margin-bottom: 150px;
   --started-margin-top: 40px;
-  --started-margin-bottom: 10px;
+  --started-margin-bottom: 100px;
   --hire-margin-top: 10px;
-  --hire-margin-bottom: 50px;
+  --hire-margin-bottom: 100px;
   --loader-bg: #ececec;
-  --hero-background: #21379f;
+  --hero-background: #20369e;
   --loader-gradient-start: rgba(30, 58, 138, 0.9);
   --loader-gradient-end: var(--main-color);
   --hero-gradient-start: rgba(91, 236, 72, 0.8);
@@ -67,6 +67,9 @@
 * 	Template Style 
 *
 * ======================================================= */
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   font-family: var(--font-primary);
@@ -129,9 +132,15 @@ p {
 
 h1, h2, h3, h4, h5, h6, figure {
   color: var(--heading-color);
-  font-family: "Chango", "Space Mono", Arial, serif;
+  font-family: 'Chango', cursive;
   font-weight: 400;
   margin: 0;
+}
+
+/* Keep original font for excluded elements */
+#fh5co-about .col-md-8:not(.fh5co-heading) h2,
+#fh5co-profile-section .display-tc h3 {
+  font-family: "Space Mono", Arial, serif;
 }
 
 ::-webkit-selection {
@@ -503,16 +512,18 @@ h1, h2, h3, h4, h5, h6, figure {
   -webkit-transform: translate3d(0, 15px, 0);
   transform: translate3d(0, 15px, 0);
 }
-.work:hover .desc, .work:active .desc {
-  opacity: 1;
-}
-.work:hover .desc h3, .work:active .desc h3 {
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-}
-.work:hover .desc span, .work:active .desc span {
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
+@media (hover: hover) {
+  .work:hover .desc, .work:active .desc {
+    opacity: 1;
+  }
+  .work:hover .desc h3, .work:active .desc h3 {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  .work:hover .desc span, .work:active .desc span {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
 }
 @media screen and (max-width: 1000px) {
   #fh5co-work .container-fluid {
@@ -529,39 +540,9 @@ h1, h2, h3, h4, h5, h6, figure {
   }
 
   .work .desc {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    height: auto;
-    background: rgba(255, 255, 255, 0.8);
+    display: none;
   }
 
-  .work.touched .desc {
-    opacity: 1;
-  }
-
-  .work .desc h3 {
-    -webkit-transform: translate3d(0, -15px, 0);
-    transform: translate3d(0, -15px, 0);
-  }
-
-  .work .desc span {
-    -webkit-transform: translate3d(0, 15px, 0);
-    transform: translate3d(0, 15px, 0);
-  }
-
-  .work.touched .desc h3,
-  .work.touched .desc span {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
 }
 
 #fh5co-started {
@@ -591,13 +572,6 @@ h1, h2, h3, h4, h5, h6, figure {
   padding-right: 50px;
 }
 
-#fh5co-started .display-tc h1 {
-  font-family: "Kaushan Script", cursive;
-}
-
-#fh5co-started .display-tc h3 {
-  font-family: "Space Mono", Arial, serif;
-}
 
 #contactFormContainer {
   display: none;
